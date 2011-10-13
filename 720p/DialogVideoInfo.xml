@@ -540,7 +540,7 @@
           <pagecontrol>60</pagecontrol>
           <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)+!Control.HasFocus(60)</autoscroll>
           <textcolor>FFececec</textcolor>
-          <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)+!Container(5000).HasFocus(8)+!Container(5000).HasFocus(11)+!Container(5000).HasFocus(12)</visible>
+          <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)+!Container(5000).HasFocus(8)</visible>
         </control>
         <control type="group">
           <visible>Container.Content(movies)|Container.Content(episodes)|Container.Content(MusicVideos)</visible>
@@ -618,7 +618,7 @@
         <onright>5000</onright>
         <ondown>50</ondown>
         <showonepage>true</showonepage>
-        <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)+!Container(5000).HasFocus(11)+!Container(5000).HasFocus(12)</visible>
+        <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)</visible>
       </control>
       
       <control type="button" id="5">
@@ -667,7 +667,7 @@
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
         <orientation>vertical</orientation>
-        <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)+!Container(5000).HasFocus(8)+!Container(5000).HasFocus(11)+!Container(5000).HasFocus(12)</visible>
+        <visible>!Container(5000).HasFocus(6)+!Container(5000).HasFocus(5)+!Container(5000).HasFocus(8)</visible>
         <itemlayout height="30" width="430">
           <control type="label">
             <posx>10</posx>
@@ -776,18 +776,6 @@
             <onclick>SendClick(2003,12)</onclick>
             <visible>!Container.Content(episodes)</visible>
           </item>
-          <item id="11">
-			<description>Get Extrafanart</description>
-			<label>Get Extrafanart</label>
-			<onclick>XBMC.RunScript(script.extrafanartdownloader, mediatype=tvshow, medianame=$INFO[ListItem.TVShowTitle])</onclick>
-			<visible>Container.Content(tvshows)+system.hasaddon(script.extrafanartdownloader)</visible>
-          </item>
-          <item id="12">
-			<description>Get Extrafanart</description>
-			<label>Get Extrafanart</label>
-			<onclick>XBMC.RunScript(script.extrafanartdownloader, mediatype=movie, medianame=$INFO[ListItem.Title])</onclick>
-			<visible>Container.Content(movies)+system.hasaddon(script.extrafanartdownloader)</visible>
-          </item>
           <item id="7">
             <description>Play Trailer</description>
             <label>$LOCALIZE[20410]</label>
@@ -820,30 +808,6 @@
         <bordersize>7</bordersize>
         <visible>!IsEmpty(listitem.property(fanart_image))+Container(5000).HasFocus(6)</visible>
       </control>
-	<control type="multiimage">
-		<posx>715</posx>
-		<posy>404</posy>
-		<width>360</width>
-		<height>202</height>
-		<fadetime>1500</fadetime>
-		<timeperimage>4000</timeperimage>
-		<randomize>true</randomize>
-		<aspectratio align="center">scale</aspectratio>
-		<imagepath background="true">$INFO[ListItem.FileNameAndPath,,extrafanart]</imagepath>
-		<visible>Container.Content(tvshows)+Container(5000).HasFocus(11)</visible>
-	</control>
-	<control type="multiimage">
-		<posx>715</posx>
-		<posy>404</posy>
-		<width>360</width>
-		<height>202</height>
-		<fadetime>1500</fadetime>
-		<timeperimage>4000</timeperimage>
-		<randomize>true</randomize>
-		<aspectratio align="center">scale</aspectratio>
-		<imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
-		<visible>Container.Content(movies)+Container(5000).HasFocus(12)</visible>
-	</control>
       <control type="image" id="3">
         <posx>708</posx>
         <posy>397</posy>

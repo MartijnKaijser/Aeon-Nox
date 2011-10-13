@@ -1074,7 +1074,7 @@
           <width>97</width>
           <height>567</height>
           <texture>views/listpanel_detailwide.png</texture>
-          <visible>[Skin.HasSetting(slimlist)+![[Container.Content(movies)|Container.Content(episodes)|Container.Content(tvshows)]+!Window.IsActive(videofiles)]]|[!Skin.HasSetting(slimlist)+!Window.IsActive(addonbrowser)]</visible>
+          <visible>[!Skin.HasSetting(slimlist)+!Window.IsActive(addonbrowser)]</visible>
         </control>
         <control type="image">
           <posx>722</posx>
