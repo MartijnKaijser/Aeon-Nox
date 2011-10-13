@@ -205,60 +205,60 @@
         <height>30</height>
         <align>center</align>
         <aligny>center</aligny>
-        <font>Font_ShowcaseMainLabel2_Caps</font>
+        <font>Font_ShowcaseMainLabel2</font>
         <label>[COLOR FFFFFFFF][UPPERCASE]$INFO[MusicPlayer.Title][/UPPERCASE][/COLOR]</label>
         <animation effect="slide" start="0,0" end="0,-12" time="200" condition="Control.IsVisible(212)">Conditional</animation>
       </control>
-      <control type="label" id="212">
-        <posx>630</posx>
-        <posy>95</posy>
-        <width>635</width>
-        <height>30</height>
-        <align>right</align>
-        <aligny>center</aligny>
-        <visible>Player.HasAudio</visible>
-        <font>Font_Reg24</font>
-        <textcolor>91FFFFFF</textcolor>
-        <label>$INFO[MusicPlayer.Time]</label>
-      </control>
-      <control type="label" id="213">
-        <posx>0</posx>
-        <posy>95</posy>
-        <width>1280</width>
-        <height>30</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <visible>Player.HasAudio</visible>
-        <font>Font_Reg24</font>
-        <textcolor>91FFFFFF</textcolor>
-        <label>/</label>
-      </control>
-      <control type="label" id="214">
-        <posx>645</posx>
-        <posy>95</posy>
-        <width>640</width>
-        <height>30</height>
-        <align>left</align>
-        <aligny>center</aligny>
-        <visible>Player.HasAudio</visible>
-        <font>Font_Reg24</font>
-        <textcolor>91FFFFFF</textcolor>
-        <label> $INFO[MusicPlayer.Duration]</label>
-        <visible>Player.HasDuration</visible>
-      </control>
-      <control type="label" id="214">
-        <posx>650</posx>
-        <posy>95</posy>
-        <width>640</width>
-        <height>30</height>
-        <align>left</align>
-        <aligny>center</aligny>
-        <visible>Player.HasAudio</visible>
-        <font>Font_Reg24</font>
-        <textcolor>91FFFFFF</textcolor>
-        <label>∞</label>
-        <visible>!Player.HasDuration</visible>
-      </control>
+        <control type="label" id="212">
+          <posx>630</posx>
+          <posy>95</posy>
+          <width>635</width>
+          <height>30</height>
+          <align>right</align>
+          <aligny>center</aligny>
+          <visible>Player.HasAudio</visible>
+          <font>Font_Reg24</font>
+          <textcolor>91FFFFFF</textcolor>
+          <label>$INFO[MusicPlayer.Time]</label>
+        </control>
+        <control type="label" id="213">
+          <posx>0</posx>
+          <posy>95</posy>
+          <width>1280</width>
+          <height>30</height>
+          <align>center</align>
+          <aligny>center</aligny>
+          <visible>Player.HasAudio</visible>
+          <font>Font_Reg24</font>
+          <textcolor>91FFFFFF</textcolor>
+          <label>/</label>
+        </control>
+        <control type="label" id="214">
+          <posx>645</posx>
+          <posy>95</posy>
+          <width>640</width>
+          <height>30</height>
+          <align>left</align>
+          <aligny>center</aligny>
+          <visible>Player.HasAudio</visible>
+          <font>Font_Reg24</font>
+          <textcolor>91FFFFFF</textcolor>
+          <label> $INFO[MusicPlayer.Duration]</label>
+          <visible>Player.HasDuration</visible>
+        </control>
+        <control type="label" id="214">
+          <posx>650</posx>
+          <posy>95</posy>
+          <width>640</width>
+          <height>30</height>
+          <align>left</align>
+          <aligny>center</aligny>
+          <visible>Player.HasAudio</visible>
+          <font>Font_Reg24</font>
+          <textcolor>91FFFFFF</textcolor>
+          <label>∞</label>
+          <visible>!Player.HasDuration</visible>
+        </control>
     </control>
   </include>
   <include name="Aeon65_OSD">
@@ -296,7 +296,7 @@
         <height>28</height>
         <aligny>center</aligny>
         <align>center</align>
-        <font>Font_Reg18</font>
+        <font>Font_Reg18_Caps</font>
         <textcolor>FF363636</textcolor>
         <animation effect="slide" start="0,-65" end="0,0" time="100">WindowOpen</animation>
         <animation effect="slide" start="0,0" end="0,-65" time="100">WindowClose</animation>
@@ -319,17 +319,6 @@
         <animation effect="slide" start="0" end="-650" time="400" tween="cubic" easing="in" delay="400" condition="Skin.HasSetting(CDArtinVis)">WindowClose</animation>
         <animation effect="slide" start="0" end="-650" time="500" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">WindowClose</animation>
         <control type="image">
-          <!--logo-->
-          <posx>50</posx>
-          <posy>-309</posy>
-          <width>230</width>
-          <height>156</height>
-          <aligny>center</aligny>
-          <texture>$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/logo.png]</texture>
-          <fadetime>300</fadetime>
-          <aspectratio>keep</aspectratio>
-        </control>
-        <control type="image">
           <visible>Skin.HasSetting(cdartinvis)</visible>
           <description>Cd overlay</description>
           <animation effect="slide" start="-104" end="0" time="700" tween="cubic" easing="out" delay="1000">WindowOpen</animation>
@@ -349,6 +338,14 @@
           <include condition="Skin.HasSetting(vinylart)">vinylart</include>
           <include condition="Skin.HasSetting(blurayart)">blurayart</include>
           <aspectratio align="bottom">keep</aspectratio>
+        </control>
+        <control type="image">
+          <description>Cover image</description>
+          <posy>-165</posy>
+          <posx>45</posx>
+          <width>260</width>
+          <height>265</height>
+          <texture diffuse="thumbs/boxes/cdcover_mask.png">common/black.png</texture>
         </control>
         <control type="image">
           <description>Cover image</description>
@@ -532,11 +529,10 @@
             <shadowcolor>black</shadowcolor>
             <animation effect="slide" start="0" end="-80" time="500" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
           </control>
-
           <control type="image">
             <posx>508</posx>
             <posy>40</posy>
-            <width>100</width>x
+            <width>100</width>
             <height>66</height>
             <colordiffuse>91FFFFFF</colordiffuse>
             <texture>flags/music/rating/$INFO[Player.StarRating]</texture>
@@ -565,37 +561,31 @@
             <visible>!IsEmpty(MusicPlayer.Year)</visible>
             <animation effect="slide" start="0" end="-80" time="500" tween="cubic" easing="in" condition="!Skin.HasSetting(CDArtinVis)">Conditional</animation>
           </control>
-          <control type="grouplist">
-            <posx>0</posx>
+          <control type="label">
+            <description>Current time</description>
+            <posx>1250</posx>
             <posy>25</posy>
-            <width>1280</width>
-            <height>100</height>
-            <itemgap>0</itemgap>
-            <align>left</align>
-            <orientation>horizontal</orientation>
-            <control type="label">
-              <description>Current time</description>
-              <posx>0</posx>
-              <posy>0</posy>
-              <width min="10" max="1250">auto</width>
-              <height>50</height>
-              <font>Font_MainClassic</font>
-              <label>$INFO[MusicPlayer.Time,, / ]$INFO[MusicPlayer.Duration]</label>
-              <textcolor>91FFFFFF</textcolor>
+            <width>500</width>
+            <height>500</height>
+            <font>Font_MainClassic</font>
+            <label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]</label>
+            <textcolor>91FFFFFF</textcolor>
             <shadowcolor>black</shadowcolor>
-              <align>right</align>
-            </control>
-            <control type="label">
-              <description>Current time</description>
-              <width min="10" max="500">auto</width>
-              <height>50</height>
-              <font>Font_MainMenu</font>
-              <label>∞</label>
-              <textcolor>91FFFFFF</textcolor>
+            <align>right</align>
+            <visible>Player.HasDuration</visible>
+          </control>
+          <control type="label">
+            <description>Current time</description>
+            <posx>1250</posx>
+            <posy>25</posy>
+            <width>500</width>
+            <height>500</height>
+            <font>Font_MainClassic</font>
+            <label>$INFO[MusicPlayer.Time] / ∞</label>
+            <textcolor>91FFFFFF</textcolor>
             <shadowcolor>black</shadowcolor>
-              <align>right</align>
-              <visible>!Player.HasDuration</visible>
-            </control>
+            <align>right</align>
+            <visible>!Player.HasDuration</visible>
           </control>
           <control type="fadelabel">
             <description>Previous / Next Fadelabel</description>

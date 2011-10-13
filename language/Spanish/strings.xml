@@ -189,7 +189,7 @@
   <string id="31104">Usar Visualizacion original de Aeon para Musica</string>
   <string id="31105">Bloquear menu principal</string>
   <string id="31028">Showcase</string>
-  <string id="31029">Showcase</string>
+  <string id="31029">Showcase2</string>
   <string id="31150">Landscape</string>
   <string id="31151">Caja DVD</string>
   <string id="31152">Caja CD</string>
@@ -278,9 +278,9 @@
   <string id="31246">Mostrar Trama Resumida</string>
   <string id="31247">Mostrar Genero</string>
   <string id="31248">Cajas BD/DVD</string>
-  <string id="31249">Clasica</string>
+  <string id="31249">Usar Barra de Menu Aeon Clasica</string>
   <string id="31250">- Transparente</string>
-  <string id="31251">Vidrio</string>
+  <string id="31251">Usar Estilo Vidrio en la barra del Menu Principal</string>
   <string id="31252">Añadir Favoritos al Submenu Peliculas</string>
   <string id="31253">Añadir Favoritos al Submenu Musica</string>
   <string id="31254">Añadir Favoritos al Submenu Series TV</string>
@@ -293,12 +293,12 @@
   <string id="31261">Separar Estadisticas de Libreria del Menu Principal</string>
   <string id="31262">Separar Feed RSS del Menu Principal</string>
   <string id="31263">Activar Fondos Animados</string>
-  <string id="31264">Activar Efectos de Fondos en Paneles</string>
+  <string id="31264">Activar Efectos de Fondos en Paneles [I](Puede aumentar el uso de la CPU!)   [/I]</string>
   <string id="31265">Ventanas Pop-up reducidas</string>
   <string id="31266">AVANZAR</string>
   <string id="31267">Activar CDArt en Visualizacion de Musica</string>
   <string id="31268">Activar Breadcrumbs</string>
-  <string id="31269">Activar Efecto en Fondos</string>
+  <string id="31269">Activar Efecto en Fondos [I](Puede aumentar el uso de la CPU!)   [/I]</string>
   <string id="31270">Deslizar Poster</string>
   <string id="31271">Posters</string>
   <string id="31272">Diseño</string>
@@ -322,7 +322,42 @@
   <string id="31290">PROGRAMACION DE TV</string>
   <string id="31291">BigFan</string>
   <string id="31292">Activar iconos animados para el clima</string>
-  
+  <string id="31293">Cuadrar</string>
+  <string id="31293">Cuadrar</string>
+  <string id="31296">Animar iconos del tiempo</string>
+  <string id="31297">Mostrar fanart slideshow de su coleccion musical</string>
+  <string id="31299">Boton musica abre siempre vista "Albums"</string>
+  <string id="31360">Proximos</string>
+  <string id="31361">Desactivar fanart</string>
+  <string id="31362">Caratulas</string>
+  <string id="31364">Plataforma</string>
+  <string id="31368">DERECHA para ver trailer</string>
+  <string id="31369">Esto sustituira la mayoria de la configuracion de la piel![CR]Estas seguro?</string>
+  <string id="31370">Configure las opciones recomendadas [I](Atajos y paths permanecen intacto)   [/I]</string>
+  <string id="31371">Activar Artista Slideshow fanart</string>
+  <string id="31372">Mostrar Info</string>
+  <string id="31373">Mostrar fanart slideshow de la coleccion de video</string>
+  <string id="31374">Energia</string>
+  <string id="31375">Animacion</string>
+  <string id="31376">Carrusel</string>
+  <string id="31377">CDArt</string>
+  <string id="31378">Establecer ruta de la biblioteca de musica</string>
+  <string id="31379">- Solo en la ventana de inicio</string>
+
+  <!-- Home Menu -->
+  <string id="31500">IMÁGENES</string>
+  <string id="31501">MÚSICA</string>
+  <string id="31502">PELÍCULAS</string>
+  <string id="31503">SERIES TV</string>
+  <string id="31504">VÍDEOS</string>
+  <string id="31505">PROGRAMAS</string>
+  <string id="31506">SISTEMA</string>
+  <string id="31507">ADD-ONS</string>
+  <string id="31508">APAGAR</string>
+  <string id="31509">FAVORITOS</string>
+  <string id="31510">EL TIEMPO</string>
+  <string id="31511">REPRODUCIR DISCO</string>
+
   <!-- Weather plugin -->
   <string id="31900">MAPAS</string>
   <string id="31901">36 HORAS</string>
@@ -361,19 +396,5 @@
 
   <string id="31970">Obteniendo pronostico...</string>
   <string id="31971">Clickee boton de video para reproducir</string>
-  
-  <!-- Menú Principal -->
-  <string id="31500">Imágenes</string>
-  <string id="31501">Música</string>
-  <string id="31502">Películas</string>
-  <string id="31503">Series de TV</string>
-  <string id="31504">Vídeos</string>
-  <string id="31505">Programas</string>
-  <string id="31506">Sistema</string>
-  <string id="31507">Add-ons</string>
-  <string id="31508">Apagar</string>
-  <string id="31509">Favoritos</string>
-  <string id="31510">El Tiempo</string>
-  <string id="31511">Reproducir Disco</string>
-  
+
 </strings>

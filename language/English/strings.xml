@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+ï»¿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
   <!-- Misc labels -->
   <string id="31000">Change Your</string>
@@ -10,8 +10,8 @@
 
   <string id="31007">Plugins</string>
 
-  <string id="31020">Recently added</string>
-  <string id="31021">-</string>
+  <string id="31020">Recently Added</string>
+  <string id="31021">Video - Files</string>
   <string id="31022">Music - Files</string>
   <string id="31023">Playing</string>
   <string id="31024">Page</string>
@@ -55,7 +55,7 @@
   <string id="31102">Background</string>
   <string id="31103">Show "Paused" in picture slide show</string>
   <string id="31106">Miscellaneous options</string>
-  <string id="31108">Main menu Buttons</string>
+  <string id="31108">Hide Main Menu Buttons</string>
   <string id="31109">Media backgrounds</string>
   <string id="31110">Edit Background for Media Type</string>
   <string id="31111">Hide</string>
@@ -64,21 +64,18 @@
   <string id="31114">Multi Image</string>
   <string id="31115">Customizer</string>
   <string id="31116"></string>
-  <string id="31117">Show recently added videos</string>
-  <string id="31118">Main menu Programs submenu</string>
-  <string id="31119">Custom add-on button</string>
-  <string id="31120">Button label</string>
-  <string id="31121">Path to add-on</string>
+  <string id="31117">Show Recently added Videos</string>
+  <string id="31118">Home Page Programs Submenu</string>
+  <string id="31119">Enable Custom Add-on Button</string>
+  <string id="31120">Button Label</string>
+  <string id="31121">Path to Add-On</string>
   <string id="31122">Weather Page</string>
   <string id="31123">Use "Posters" instead of "Banners" for TV Shows</string>
-  <string id="31126">Main menu Movies submenu</string>
-  <string id="31127">Lyrics add-on</string>
+  <string id="31126">Enable Lyrics in Music OSD</string>
+  <string id="31127">Path to Lyrics Add-On</string>
   <string id="31128">Lyrics</string>
-  <string id="31129">-</string>
-  <string id="31130">Subtitle add-on</string>
-  
-  <string id="31132">Video bookmarks browser</string>
-  <string id="31133">Show resume points for in progress videos</string>
+  <string id="31129">Enable Subtitle Download in Video OSD</string>
+  <string id="31130">Path to Subtitle Add-On</string>
 
   <!-- Script labels -->
   <string id="31200">Shortcuts</string>
@@ -105,7 +102,7 @@
   <string id="31313">Choose a Scraper</string>
   <string id="31314">Content Scanning Options</string>
   <string id="31315">Basic</string>
-  <string id="31316">Get extrafanart</string>
+  <string id="31316"></string>
   <string id="31317">Set Fanart Path</string>
   <string id="31319">Selected Profile</string>
   <string id="31320">Last Logged In</string>
@@ -123,8 +120,6 @@
   <string id="31332">Latest Episode</string>
   <string id="31333">Recent</string>
   <string id="31334">Latest</string>
-  <string id="31335">In Progress</string>
-  
   <!-- Video and Music OSD Labels  -->
   <string id="31351">Pause</string>
   <string id="31352">Stop</string>
@@ -140,15 +135,14 @@
   <string id="31392">Arial based</string>
 
   <!-- Description Labels  -->
-  <string id="31400">[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver</string>
-  <string id="31401">[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts</string>
-  <string id="31402">[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR]Manage your music library · Set music playback options · Change music listing options[CR]Setup song submission · Set karaoke options</string>
-  <string id="31403">[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR]Set picture listing options · Configure slideshows</string>
+  <string id="31400">[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin Â· Set language and region Â· Change file listing options[CR]Set up a screensaver</string>
+  <string id="31401">[B]CONFIGURE VIDEO SETTINGS[/B][CR][CR]Manage your video library Â· Set video playback options Â· Change video listing options[CR]Set subtitle fonts</string>
+  <string id="31402">[B]CONFIGURE MUSIC SETTINGS[/B][CR][CR]Manage your music library Â· Set music playback options Â· Change music listing options[CR]Setup song submission Â· Set karaoke options</string>
+  <string id="31403">[B]CONFIGURE PICTURE SETTINGS[/B][CR][CR]Set picture listing options Â· Configure slideshows</string>
   <string id="31404">[B]CONFIGURE WEATHER SETTINGS[/B][CR][CR]Set three cities to collect weather information</string>
-  <string id="31405">[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP · Configure file sharing[CR]Set internet access options</string>
-  <string id="31406">[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · Setup remote controls[CR]Set power saving options · Enable debugging · Setup master lock</string>
-  
-  <string id="31408">[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons · Browse for and install Add-ons from xbmc.org[CR]Modify Add-on settings</string>
+  <string id="31405">[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Setup control of XBMC via UPnP and HTTP Â· Configure file sharing[CR]Set internet access options</string>
+  <string id="31406">[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays Â· Configure audio output Â· Setup remote controls[CR]Set power saving options Â· Enable debugging Â· Setup master lock</string>
+  <string id="31408">[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons Â· Browse for and install Add-ons from xbmc.org[CR]Modify Add-on settings</string>
 
   <string id="31421">Select your XBMC user Profile[CR]to login and continue</string>
   
@@ -178,20 +172,20 @@
   <string id="31131">Lower main menu while locked</string>
   <string id="31140">Music OSD</string>
   <string id="31141">Video OSD</string>
-  <string id="31143">Animated fanart in music visualization</string>
-  <string id="31144">Music fanart "Now Playing"</string>
-  <string id="31145">Hide studio and rating flags</string>
+  <string id="31143">Animated Fanart in Music Visualization</string>
+  <string id="31144">Music Fanart "Now Playing"</string>
+  <string id="31145">Hide Studio and Rating Flags</string>
   <string id="31146">Show 10 tracks in playlist instead of 5</string>
   <string id="31147">Show playlist</string>
-  <string id="31148">Show timepanel</string>
+  <string id="31148">Show Timepanel</string>
   <string id="31149">This will shutdown XBMC! [CR]Are you sure?</string>
-  <string id="31407">[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup the Aeon Nox skin · Add and remove home menu items[CR]Change skin backgrounds</string>
-  <string id="31409">[B]MONITOR YOUR SYSTEM[/B][CR][CR]Check out your hardware · Monitor CPU usage[CR]Check XBMC revision number</string>
+  <string id="31407">[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup the Aeon Nox skin Â· Add and remove home menu items[CR]Change skin backgrounds</string>
+  <string id="31409">[B]MONITOR YOUR SYSTEM[/B][CR][CR]Check out your hardware Â· Monitor CPU usage[CR]Check XBMC revision number</string>
   <string id="31124">Bigger top bar on music OSD</string>
-  <string id="31125">Show background "Now Playing" visualization</string>
-  <string id="31142">Show album level fanart in visualization</string>
-  <string id="31107">Hide media flags in List view</string>
-  <string id="31104">Use Classic Aeon music visualization</string>
+  <string id="31125">Show Background "Now Playing" Visualization</string>
+  <string id="31142">Show Album level fanart in Visualization</string>
+  <string id="31107">Hide Flagging in List View</string>
+  <string id="31104">Use Original Aeon Music Visualization</string>
   <string id="31105">Lock main menu</string>
   <string id="31028">Showcase</string>
   <string id="31029">Showcase2</string>
@@ -216,7 +210,7 @@
   <string id="31168">No CoverFlow</string>
   <string id="31169">Thin Panel</string>
   <string id="31170">Lower List</string>
-  <string id="31171">Run TV logo script</string>
+  <string id="31171">TV Logo Script</string>
   <string id="31318">Small</string>
   <string id="31172">Extra Info</string>
   <string id="31173">Get Logo</string>
@@ -225,44 +219,44 @@
   <string id="31176">Enable smart playlist button</string>
   <string id="31177">Main menu Music submenu</string>
   <string id="31178">Main menu TV Shows submenu</string>
-  <string id="31179">Enable Kiosk Mode (disables media menu)</string>
-  <string id="31180">Enable alternative Kiosk Mode (hides options in media menu)</string>
-  <string id="31181">Add smart playlist to main menu</string>
-  <string id="31182">Edit label</string>
-  <string id="31183">Enable shutdown warning in home window</string>
-  <string id="31184">Show source flag instead of codec flag</string>
+  <string id="31179">Enable Kiosk Mode (Disables Media Menu)</string>
+  <string id="31180">Enable Alternative Kiosk Mode (Hides Options in Media Menu)</string>
+  <string id="31181">Add Video Playlist to Home Menu</string>
+  <string id="31182">Enable Extrathumbs Support in Showcase Views</string>
+  <string id="31183">Enable Shutdown Warning in Home Menu</string>
+  <string id="31184">Show Source Flag Instead of Codec Flag</string>
   <string id="31185">Viewtype</string>
-  <string id="31186">-</string>
-  <string id="31187">Time-out for auto hide infopanel (seconds)</string>
+  <string id="31186">Set Time-out for Auto Hide Infopanel</string>
+  <string id="31187">Time-out for Auto Hide Infopanel (seconds)</string>
   <string id="31188">Show Status</string>
   <string id="31189">Previous Episode</string>
   <string id="31190">Next Episode</string>
   <string id="31191">Darker Fanart</string>
-  <string id="31192">Icon: [B]TV Show Thumb[/B]</string>
-  <string id="31193">Icon: [B]TV Show Logo[/B]</string>
-  <string id="31194">Set focus offset of main menu (range from -2 to 14)</string>
-  <string id="31195">Add favourite to main menu</string>
-  <string id="31196">Path</string>
-  <string id="31197">Favourite button</string>
+  <string id="31192">Icon: [B]TV Show thumb[/B]</string>
+  <string id="31193">Icon: [B]TV Show logo[/B]</string>
+  <string id="31194">Set Focus Offset of Main Menu (range from -2 to 14)</string>
+  <string id="31195">Add Favourite to Home Menu</string>
+  <string id="31196">Favourite Path</string>
+  <string id="31197">Enable Favourite Button</string>
   <string id="31198">Extrathumbs</string>
-  <string id="31199">Enable custom focus offset of main menu on startup</string>
+  <string id="31199">Enable Custom Focus Offset of Main Menu on Startup</string>
   <string id="31217">LATEST SONG</string>
   <string id="31218">LATEST SONGS</string>
   <string id="31219">FEATURED EPISODE</string>
   <string id="31220">FEATURED EPISODES</string>
   <string id="31221">FEATURED MOVIE</string>
   <string id="31222">FEATURED MOVIES</string>
-  <string id="31212">- Show latest movies widget</string>
-  <string id="31213">- Show random movies widget</string>
-  <string id="31214">- Show latest episodes widget</string>
-  <string id="31215">- Show random episodes widget</string>
-  <string id="31216">- Show latest songs widget</string>
-  <string id="31211">- Show random songs widget</string>
-  <string id="31223">- Show latest movie posters widget</string>
-  <string id="31224">- Show random movie posters widget</string>
+  <string id="31212">- Show Latest Movies Widget</string>
+  <string id="31213">- Show Random Movies Widget</string>
+  <string id="31214">- Show Latest Episodes Widget</string>
+  <string id="31215">- Show Random Episodes Widget</string>
+  <string id="31216">- Show Latest Music Widget</string>
+  <string id="31211">- Show Random Music Widget</string>
+  <string id="31223">- Show Latest Movie Posters Widget</string>
+  <string id="31224">- Show Random Movie Posters Widget</string>
   <string id="31225">Audio/Sub</string>
-  <string id="31226">Show plot only</string>
-  <string id="31227">- Use Vinyl Record as default in CDArt</string>
+  <string id="31226">Hide Flags</string>
+  <string id="31227">- Use Vinyl Record as Default in CDArt</string>
   <string id="31228">Navigation: [B]Vertical[/B]</string>
   <string id="31229">Navigation: [B]Horizontal[/B]</string>
   <string id="31230">Viewtypes</string>
@@ -276,74 +270,66 @@
   <string id="31239">-</string>
   <string id="31240">Show New</string>
   <string id="31241">Show Watched</string>
-  <string id="31242">-</string>
+  <string id="31242">Submenu of Movies Uses Cinema Experience Script as Default</string>
   <string id="31243">Schedule</string>
-  <string id="31244">Enable CDArt in "Now Playing" widget</string>
-  <string id="31245">-</string>
-  <string id="31246">-</string>
+  <string id="31244">Enable CDArt in Home Now Playing</string>
+  <string id="31245">Show Plot</string>
+  <string id="31246">Show Plot Outline</string>
   <string id="31247">Show Genre</string>
   <string id="31248">BD/DVD Cases</string>
   <string id="31249">Classic</string>
   <string id="31250">Transparent</string>
   <string id="31251">Glass</string>
-  <string id="31252">- Show latest albums widget</string>
-  <string id="31253">- Show random albums widget</string>
-  <string id="31254">-</string>
-  <string id="31255">- Use Blu-ray Disc as default in CDArt</string>
-  <string id="31256">Use wrap list in Landscape and Showcase views</string>
+  <string id="31252">Add Favorite to Movies Submenu</string>
+  <string id="31253">Add Favorite to Music Submenu</string>
+  <string id="31254">Add Favorite to TV Shows Submenu</string>
+  <string id="31255">- Use Blu-ray Disc as Default in CDArt</string>
+  <string id="31256">Use Wrap List in Landscape and Showcase views</string>
   <string id="31257">Details</string>
   <string id="31258">Overview</string>
   <string id="31259">Press RIGHT to see trailer</string>
   <string id="31260">-</string>
   <string id="31261">-</string>
   <string id="31262">-</string>
-  <string id="31263">Enable animated backgrounds</string>
-  <string id="31264">Enable background effect on panels [I](Can increase CPU usage!)   [/I]</string>
-  <string id="31265">Smaller pop-up dialogs</string>
+  <string id="31263">Enable Animated Backgrounds</string>
+  <string id="31264">Enable Background Effect on Panels[I](Can increase CPU usage!)   [/I]</string>
+  <string id="31265">Smaller Pop-up Dialogs</string>
   <string id="31266">FORWARD</string>
-  <string id="31267">Enable CDArt in music visualization</string>
-  <string id="31268">Enable breadcrumbs</string>
-  <string id="31269">Enable background effect [I](Can increase CPU usage!)   [/I]</string>
+  <string id="31267">Enable CDArt in Music Visualization</string>
+  <string id="31268">Enable Breadcrumbs</string>
+  <string id="31269">Enable Background Effect [I](Can increase CPU usage!)   [/I]</string>
   <string id="31270">Poster Slide</string>
   <string id="31271">Posters</string>
   <string id="31272">Layout</string>
   <string id="31273">Show Overlay</string>
-  <string id="31274">Please choose a layout in the media menu [CR] (Press up to activate media menu)</string>
-  <string id="31275">Enable weather backgrounds based on current conditions</string>
-  <string id="31276">Use smaller "Now Playing" music widget</string>
+  <string id="31274">Please Choose a Layout in the Media Menu [CR] (Press Up to Activate Media Menu)</string>
+  <string id="31275">Enable Weather Backgrounds Based on Current Conditions</string>
+  <string id="31276">Use Smaller Now Playing Widget</string>
   <string id="31277">Navigation: [B]Wrap List[/B]</string>
   <string id="31278">Navigation: [B]Fixed List[/B]</string>
-  <string id="31279">Play trailers in fullscreen</string>
+  <string id="31279">Play Trailers in Fullscreen in all Views</string>
   <string id="31280">Mediaflags</string>
-  <string id="31281">Show video info when player is paused</string>
+  <string id="31281">Show Video Info when Player is Paused</string>
   <string id="31282">Clear Cases</string>
   <string id="31283">InfoWall</string>
   <string id="31284">Cinema</string>
   <string id="31285">Episode No.</string>
-  <string id="31286">-</string>
+  <string id="31286">Enable CDArt in List View (only on song level)</string>
   <string id="31287">4 Thumbs</string>
-  <string id="31288">Disable trailer label</string>
-  <string id="31289">Wide</string>
+  <string id="31288">Disable Trailer Label</string>
+  <string id="31289">Wider</string>
   <string id="31290">TV Guide</string>
   <string id="31291">BigFan</string>
-  <string id="31292">Enable animated weather icons</string>
+  <string id="31292">Enable Animated Weather Icons</string>
   <string id="31293">Square</string>
-  <string id="31294">ROOT</string>
-  <string id="31295">Widget</string>
   <string id="31296">Animated weather icons</string>
   <string id="31297">Show fanart slideshow from your music collection</string>
   <string id="31298">Set spot color</string>
-  <string id="31299">-</string>
-  <string id="31358">LATEST ALBUM</string>
-  <string id="31359">LATEST ALBUMS</string>
+  <string id="31299">Music button always opens "Albums" view</string>
   <string id="31360">Upcoming</string>
   <string id="31361">Disable fanart</string>
   <string id="31362">Round Covers</string>
-  <string id="31363">Enable covers in now playing widget</string>
   <string id="31364">Platform</string>
-  <string id="31365">Get Tune</string>
-  <string id="31366">Select default action</string>
-  <string id="31367">- Show random add-ons widget</string>
   <string id="31368">Press RIGHT to see trailer</string>
   <string id="31369">This will replace most of your Aeon Nox skin settings![CR]Are you sure?</string>
   <string id="31370">Set recommended options [I](Shortcuts and paths remain intact)   [/I]</string>
@@ -354,11 +340,9 @@
   <string id="31375">Animations</string>
   <string id="31376">Carousel</string>
   <string id="31377">CDArt</string>
-  <string id="31378">Set path to music library</string>
+  <string id="31378">Set Path to Music Library</string>
   <string id="31379">- Only on Home window</string>
   <string id="31380">Stripshow</string>
-  <string id="31381">CURRENT TIME</string>
-  <string id="31382">filter text</string>
   <string id="31383">Backdrop</string>
   <string id="31384">Curtain</string>
   <string id="31385">Off/Trigger</string>
@@ -366,7 +350,6 @@
   <string id="31387">Darken</string>
   <string id="31388">Floor label:</string>
   <string id="31389">Set glowbar color</string>
-  <string id="31393">Pressing down on scrollbar activates fullscreen fanart</string>
   <string id="31394">Press DOWN to see trailer</string>
   <string id="31395">Enable extrafanart</string>
   <string id="31396">BannerList</string>
@@ -383,10 +366,6 @@
   <string id="31452">Not rated</string>
   <string id="31453">Airing</string>
   <string id="31454">Banners</string>
-  <string id="31455">Show CD Wall Visualization</string>
-  <string id="31456">- Path to CD Cover Folder</string>
-  <string id="31457">Comics</string>
-  <string id="31458">Push UP or DOWN to change rating</string>
 
   <!-- Home Menu -->
   <string id="31500">PICTURES</string>
@@ -401,27 +380,6 @@
   <string id="31509">FAVORITES</string>
   <string id="31510">WEATHER</string>
   <string id="31511">PLAY DISC</string>
-
-  <!--Skin Settings-->
-  <string id="31600">Customize Home window</string>
-  <string id="31601">Lock main menu in current position</string>
-  <string id="31602">Choose main menu style</string>
-  <string id="31603">Customize the look of the menu bar!</string>
-  <string id="31604">Press left or right to see the different styles.</string>
-  <string id="31605">Press select to toggle menu items layout.</string>
-  <string id="31606">Customize Home window furniture</string>
-  <string id="31607">Press left or right to toggle position.</string>
-  <string id="31608">Press up or down to cycle through items.</string>
-  <string id="31609">Press select to disable or enable items.</string>
-  <string id="31610">Select custom color for the neon glowbars</string>
-  <string id="31611">Enable fullscreen video "Now Playing"</string>
-  <string id="31612">Enter number of positions to move (range -2 to 19)</string>
-  <string id="31613">Enable custom startup focus position of main menu</string>
-  <string id="31614">Enable background animations</string>
-  <string id="31615">Enable audio visualization "Now Playing"</string>
-  <string id="31616">Low</string>
-  <string id="31617">High</string>
-
 
   <!-- Weather plugin -->
   <string id="31900">MAPS</string>

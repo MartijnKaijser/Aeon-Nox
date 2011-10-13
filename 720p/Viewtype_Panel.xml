@@ -1,4 +1,23 @@
 <includes>
+  <include name="DetailLabelVars">
+    <posx>465</posx>
+    <width>205</width>
+    <height>25</height>
+    <font>Font_Info</font>
+    <textcolor>grey2</textcolor>
+    <shadowcolor>black</shadowcolor>
+    <align>right</align>
+    <aligny>center</aligny>
+  </include>
+  <include name="DetailValueVars">
+    <posx>475</posx>
+    <width>415</width>
+    <height>25</height>
+    <font>Font_Info</font>
+    <textcolor>white</textcolor>
+    <shadowcolor>black</shadowcolor>
+    <aligny>center</aligny>
+  </include>
   <include name="Panel">
     <control type="group">
       <visible>Control.IsVisible(550)</visible>
@@ -139,7 +158,7 @@
           <align>center</align>
           <aligny>center</aligny>
           <scroll>true</scroll>
-          <textcolor>white</textcolor>
+          <textcolor>grey2</textcolor>
           <shadowcolor>black</shadowcolor>
           <visible>Container.Content(movies)+!IsEmpty(ListItem.Trailer)+ !Player.HasVideo + Control.HasFocus(7001)</visible>
         </control>
@@ -265,31 +284,7 @@
           <control type="label">
             <posy>530</posy>
             <include>DetailValueVars</include>
-            <label fallback="312577">$INFO[ListItem.Mpaa]</label>
-          </control>
-          <control type="group">
-            <visible>!IsEmpty(ListItem.PlayCount)</visible>
-            <posy>25</posy>
-            <control type="label">
-              <posy>530</posy>
-              <include>DetailLabelVars</include>
-              <label>$LOCALIZE[567]:</label>
-            </control>
-            <control type="label">
-              <posy>530</posy>
-              <include>DetailValueVars</include>
-              <label>$INFO[ListItem.PlayCount]</label>
-            </control>
-            <control type="label">
-              <posy>555</posy>
-              <include>DetailLabelVars</include>
-              <label>$LOCALIZE[568]:</label>
-            </control>
-            <control type="label">
-              <posy>555</posy>
-              <include>DetailValueVars</include>
-              <label>$INFO[ListItem.LastPlayed]</label>
-            </control>
+            <label fallback="31452">$INFO[ListItem.Mpaa]</label>
           </control>
         </control>
         <control type="group">
@@ -420,31 +415,7 @@
           <control type="label">
             <posy>555</posy>
             <include>DetailValueVars</include>
-            <label fallback="312577">$INFO[ListItem.Mpaa]</label>
-          </control>
-          <control type="group">
-            <visible>!IsEmpty(ListItem.PlayCount)</visible>
-            <posy>50</posy>
-            <control type="label">
-              <posy>530</posy>
-              <include>DetailLabelVars</include>
-              <label>$LOCALIZE[567]:</label>
-            </control>
-            <control type="label">
-              <posy>530</posy>
-              <include>DetailValueVars</include>
-              <label>$INFO[ListItem.PlayCount]</label>
-            </control>
-            <control type="label">
-              <posy>555</posy>
-              <include>DetailLabelVars</include>
-              <label>$LOCALIZE[568]:</label>
-            </control>
-            <control type="label">
-              <posy>555</posy>
-              <include>DetailValueVars</include>
-              <label>$INFO[ListItem.LastPlayed]</label>
-            </control>
+            <label fallback="31452">$INFO[ListItem.Mpaa]</label>
           </control>
         </control>
 
@@ -486,13 +457,13 @@
             <posx>800</posx>
             <posy>600</posy>
             <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+            <texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
           </control>
           <control type="image">
             <posx>940</posx>
             <posy>600</posy>
             <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/resolution/defaultscreen.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+            <texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
           </control>
           <control type="group">
             <description>Audio Flags</description>
@@ -517,7 +488,6 @@
           <posy>58</posy>
           <width>840</width>
           <height>472</height>
-          <visible>Player.HasVideo</visible>
         </control>
       </control>
       <control type="list" id="550">
@@ -527,14 +497,13 @@
         <height>546</height>
         <itemgap>0</itemgap>
         <onleft>60</onleft>
-        <onright condition="!IsEmpty(ListItem.Trailer)">SetFocus(7001)</onright>
-        <onright condition="IsEmpty(ListItem.Trailer)">9000</onright>
+        <onright>7000</onright>
         <onup>550</onup>
         <ondown>550</ondown>
         <pagecontrol>60</pagecontrol>
         <viewtype label="$LOCALIZE[31233]">list</viewtype>
         <visible>Container.Content(tvshows)|Container.Content(episodes)|Container.Content(movies)</visible>
-        <scrolltime tween="quadratic" easing="out">200</scrolltime>
+        <scrolltime>300</scrolltime>
         <itemlayout height="54" width="380">
           <control type="label">
             <posx>10</posx>
@@ -567,7 +536,6 @@
             <width>214</width>
             <height>64</height>
             <texture>views/listpanel_selectbar.png</texture>
-            <animation effect="fade" start="100" end="50" time="50" condition="!Control.HasFocus(550)">Conditional</animation>
           </control>
           <control type="label">
             <posx>10</posx>
@@ -606,14 +574,14 @@
         <onright>550</onright>
         <showonepage>false</showonepage>
         <orientation>vertical</orientation>
-        <!--<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60)">Conditional</animation>-->
+        <!--<visible allowhiddenfocus="true">Control.HasFocus(60)</visible>-->
       </control>
       <control type="image">
         <posx>331</posx>
         <posy>43</posy>
         <width>842</width>
         <height>634</height>
-        <texture>settings/settings_intframe_top.png</texture>
+        <texture background="true">settings/settings_intframe_top.png</texture>
         <animation effect="fade" start="100" end="30" time="50" delay="0" condition="Container.Content(episodes)|[Container.Content(movies)+Skin.HasSetting(paneldetail)]">Conditional</animation>
         <include>Animation_SettingsInternalPanel</include>
       </control>

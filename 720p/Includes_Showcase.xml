@@ -62,13 +62,13 @@
 	<include name="MovieShowcaseGlassOverlay">
 		<include>MovieShowcaseThumbDimensions</include>
 		<bordertexture border="-17">thumbs/poster_shadow.png</bordertexture>
-		<texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
+		<texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
 	</include>
 	<include name="MovieShowcaseGlassOverlayAngled">
 		<control type="image">
 			<include>MovieShowcaseThumbDimensions</include>
 			<bordertexture border="-17">thumbs/poster_shadow.png</bordertexture>
-			<texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
+			<texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
 		</control>
 	</include>
 	<!-- Music Showcase Variables: Main thumbs -->
@@ -103,14 +103,14 @@
 	<include name="MusicShowcaseBlack">
 		<control type="image">
 			<include>MusicShowcaseThumbDimensions</include>
-			<texture diffuse="thumbs/cdcover_mask.png">common/black.png</texture>
+			<texture background="true" diffuse="thumbs/cdcover_mask.png">common/black.png</texture>
 		</control>
 	</include>
 	<include name="MusicShowcaseBlackReflection">
 		<control type="image">
 			<include>MusicShowcaseThumbReflectionDimensions</include>
 			<colordiffuse>d0FFFFFF</colordiffuse>
-			<texture flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">common/black.png</texture>
+			<texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">common/black.png</texture>
 		</control>
 	</include>
 	<include name="MusicShowcaseThumbMain">
@@ -151,24 +151,24 @@
 	<include name="MusicShowcaseGlassOverlayAngled">
 		<include>MusicShowcaseThumbDimensions</include>
 		<bordertexture border="-17">thumbs/cd_shadow_light.png</bordertexture>
-		<texture diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass_noedge.png</texture>
+		<texture background="true" diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass_noedge.png</texture>
 	</include>
 	<include name="MusicShowcaseGlassOverlayMain">
 		<include>MusicShowcaseThumbDimensions</include>
 		<bordertexture border="-17">thumbs/cd_shadow_light.png</bordertexture>
-		<texture diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass.png</texture>
+		<texture background="true" diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass.png</texture>
 	</include>
 	<include name="MusicShowcaseGlassOverlay">
 		<include>MusicShowcaseThumbDimensions</include>
 		<bordertexture border="-17">thumbs/cd_shadow_light.png</bordertexture>
-		<texture diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass.png</texture>
+		<texture background="true" diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass.png</texture>
 	</include>
 	<include name="NewOverlayShowCase">
 		<posx>164</posx>
 		<posy>6</posy>
 		<width>60</width>
 		<height>60</height>
-		<texture>thumbs/UnWatched2.png</texture>
+		<texture background="true">thumbs/UnWatched2.png</texture>
 		<visible>Skin.HasSetting(newstatus)</visible>
 	</include>
 	<include name="WatchedOverlayShowCase">
@@ -1206,20 +1206,12 @@
 		<control type="group" id="7003">
 			<posy>387</posy>
 			<camera x="640" y="540" />
-      <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="150" end="100" center="640,360" time="300" tween="cubic" easing="out"/>
-        <effect type="fade" start="0" end="100" time="300"/>
-      </animation>
-      <animation type="WindowClose" reversible="false">
-        <effect type="fade" start="100" end="0" time="300" delay="300"/>
-        <effect type="zoom" start="100" end="130" center="640,360" time="300" delay="300" tween="cubic" easing="in"/>
-      </animation>
-      <visible>Control.IsVisible(509) + !Control.IsVisible(7001) + !Control.IsVisible(7002) + Control.IsVisible(970)+!Control.HasFocus(110)</visible>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<visible>Control.IsVisible(509) + !Control.IsVisible(7001) + !Control.IsVisible(7002) + Control.IsVisible(970)+!Control.HasFocus(110)</visible>
 			<control type="group">
 				<posx>50</posx>
-        <animation effect="slide" time="300" start="0" end="545" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="545" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="-50" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="-50" start="-65" end="-65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="-50" start="0" end="65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-795" time="800" tween="cubic" easing="inout" />
@@ -1228,9 +1220,7 @@
 			</control>
 			<control type="group">
 				<posx>150</posx>
-        <animation effect="slide" time="300" start="0" end="445" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="445" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="50" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="50" start="-65" end="-65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="50" start="0" end="65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-645" time="800" tween="cubic" easing="inout" />
@@ -1239,9 +1229,7 @@
 			</control>
 			<control type="group">
 				<posx>250</posx>
-        <animation effect="slide" time="300" start="0" end="345" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="345" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="150" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="150" start="-65" end="-65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="150" start="0" end="65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-495" time="800" tween="cubic" easing="inout" />
@@ -1250,9 +1238,7 @@
 			</control>
 			<control type="group">
 				<posx>350</posx>
-        <animation effect="slide" time="300" start="0" end="245" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="245" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="250" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="250" start="-65" end="-65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="250" start="0" end="65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-345" time="800" tween="cubic" easing="inout" />
@@ -1261,9 +1247,7 @@
 			</control>
 			<control type="group">
 				<posx>450</posx>
-        <animation effect="slide" time="300" start="0" end="145" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="145" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="350" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="350" start="-65" end="-65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="350" start="0" end="65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-195" time="800" tween="cubic" easing="inout" />
@@ -1272,9 +1256,7 @@
 			</control>
 			<control type="group">
 				<posx>960</posx>
-        <animation effect="slide" time="300" start="0" end="-545" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-545" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1330" start="65" end="65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1330" start="65" end="65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="1330" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="795" time="800" tween="cubic" easing="inout" />
@@ -1283,9 +1265,7 @@
 			</control>
 			<control type="group">
 				<posx>860</posx>
-        <animation effect="slide" time="300" start="0" end="-445" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-445" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1230" start="65" end="65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1230" start="65" end="65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="1230" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="645" time="800" tween="cubic" easing="inout" />
@@ -1294,9 +1274,7 @@
 			</control>
 			<control type="group">
 				<posx>760</posx>
-        <animation effect="slide" time="300" start="0" end="-345" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-345" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1130" start="65" end="65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1130" start="65" end="65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="1130" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="495" time="800" tween="cubic" easing="inout" />
@@ -1305,9 +1283,7 @@
 			</control>
 			<control type="group">
 				<posx>660</posx>
-        <animation effect="slide" time="300" start="0" end="-245" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-245" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1030" start="65" end="65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1030" start="65" end="65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="1030" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="345" time="800" tween="cubic" easing="inout" />
@@ -1316,9 +1292,7 @@
 			</control>
 			<control type="group">
 				<posx>560</posx>
-        <animation effect="slide" time="300" start="0" end="-145" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-145" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="930" start="65" end="65" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="930" start="65" end="65" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="Skin.HasSetting(noflowalbum)">
 					<effect type="rotatey" center="930" start="0" end="-65" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="195" time="800" tween="cubic" easing="inout" />
@@ -1654,22 +1628,14 @@
 		</control>
 		<control type="group" id="6000">
 			<posy>380</posy>
-      <animation type="WindowOpen" reversible="false">
-        <effect type="zoom" start="150" end="100" center="640,360" time="300" tween="cubic" easing="out"/>
-        <effect type="fade" start="0" end="100" time="300"/>
-      </animation>
-      <animation type="WindowClose" reversible="false">
-        <effect type="fade" start="100" end="0" time="300" delay="300"/>
-        <effect type="zoom" start="100" end="130" center="640,360" time="300" delay="300" tween="cubic" easing="in"/>
-      </animation>
-      <visible>Control.IsVisible(501) + !Control.IsVisible(6001) + !Control.IsVisible(6002) + Control.IsVisible(960) +!Control.HasFocus(109)</visible>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<visible>Control.IsVisible(501) + !Control.IsVisible(6001) + !Control.IsVisible(6002) + Control.IsVisible(960) +!Control.HasFocus(109)</visible>
 			<camera x="640" y="540" />
 			<control type="group">
 				<posx>10</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-6).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="545" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="545" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="-90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="-90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="-90" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-685" time="800" tween="cubic" easing="inout" />
@@ -1682,9 +1648,7 @@
 			<control type="group">
 				<posx>100</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-5).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="455" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="455" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="0" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="0" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-577" time="800" tween="cubic" easing="inout" />
@@ -1697,9 +1661,7 @@
 			<control type="group">
 				<posx>190</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-4).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="365" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="365" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="90" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="90" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-469" time="800" tween="cubic" easing="inout" />
@@ -1712,9 +1674,7 @@
 			<control type="group">
 				<posx>280</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-3).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="275" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="275" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="180" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="180" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="180" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-362" time="800" tween="cubic" easing="inout" />
@@ -1727,9 +1687,7 @@
 			<control type="group">
 				<posx>370</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-2).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="185" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="185" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="270" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="270" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-256" time="800" tween="cubic" easing="inout" />
@@ -1742,9 +1700,7 @@
 			<control type="group">
 				<posx>460</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(-1).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="95" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="95" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="360" start="-55" end="-55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="360" start="-55" end="-55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="360" start="0" end="55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="-151" time="800" tween="cubic" easing="inout" />
@@ -1757,9 +1713,7 @@
 			<control type="group">
 				<posx>1000</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(6).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-545" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-545" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1380" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1380" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="1380" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="685" time="800" tween="cubic" easing="inout" />
@@ -1772,9 +1726,7 @@
 			<control type="group">
 				<posx>910</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(5).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-455" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-455" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1290" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="1290" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="577" time="800" tween="cubic" easing="inout" />
@@ -1787,9 +1739,7 @@
 			<control type="group">
 				<posx>820</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(4).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-365" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-365" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1200" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1200" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="1200" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="469" time="800" tween="cubic" easing="inout" />
@@ -1802,9 +1752,7 @@
 			<control type="group">
 				<posx>730</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(3).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-275" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-275" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1110" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1110" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="1110" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="362" time="800" tween="cubic" easing="inout" />
@@ -1817,9 +1765,7 @@
 			<control type="group">
 				<posx>640</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(2).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-185" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-185" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="1020" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="1020" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="1020" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="256" time="800" tween="cubic" easing="inout" />
@@ -1832,9 +1778,7 @@
 			<control type="group">
 				<posx>550</posx>
 				<visible>!IsEmpty(Container(501).ListItemNoWrap(1).label) | Skin.HasSetting(showcasewrap)</visible>
-        <animation effect="slide" time="300" start="0" end="-95" tween="cubic" easing="in">WindowClose</animation>
-        <animation effect="slide" time="800" delay="300" end="0" start="-95" tween="cubic" easing="out">WindowOpen</animation>
-        <animation effect="rotatey" center="930" start="55" end="55" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatey" center="930" start="55" end="55" time="0" condition="true">Conditional</animation>
 				<animation type="Conditional" condition="[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)]]] ">
 					<effect type="rotatey" center="930" start="0" end="-55" time="800" tween="cubic" easing="inout" />
 					<effect type="slide" start="0" end="151" time="800" tween="cubic" easing="inout" />
@@ -1889,10 +1833,7 @@
 		</control>
 		<control type="group">
 			<visible>[Control.IsVisible(197)|Control.IsVisible(198)]+!Control.HasFocus(109)+[[Skin.HasSetting(showcaseinfoon)+Container.Content(movies)]|[Skin.HasSetting(showcaseinfoontv)+[Container.Content(tvshows)|Container.Content(seasons)]]|[Skin.HasSetting(showcaseinfoonep)+Container.Content(episodes)]|Player.HasVideo]|Control.HasFocus(7000)|Control.HasFocus(7001)</visible>
-      <animation effect="slide" start="0,-630" end="0,0" time="550" easing="out" tween="cubic">VisibleChange</animation>
-      <animation effect="slide" start="0,-630" end="0,0" time="550" delay="800" easing="out" tween="cubic" condition="Control.IsVisible(501)|Control.IsVisible(504)">WindowOpen</animation>
-      <animation effect="slide" start="0,-630" end="0,0" time="550" delay="300" easing="out" tween="cubic" condition="Control.IsVisible(503)|Control.IsVisible(508)">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="0,-630" time="300" easing="in" tween="cubic">WindowClose</animation>
+			<animation effect="slide" start="0,-630" end="0,0" time="550" easing="out" tween="cubic">VisibleChange</animation>
 			<control type="group">
 				<!-- info pane -->
 				<posx>0</posx>
@@ -1921,7 +1862,8 @@
 					<posx>75</posx>
 					<width>1130</width>
 					<height>590</height>
-					<texture border="0,0,0,204">views/multiplex_back.png</texture>
+					<texture background="true" border="0,0,0,204">views/multiplex_back.png</texture>
+					<include>Animation_CommonFade</include>
 					<animation effect="zoom" start="75,26,1130,590" end="100,26,1130,550" time="250" reversible="false" condition="[Control.IsVisible(510)+Skin.HasSetting(posterslide)]">Conditional</animation>
 					<visible>!Skin.HasSetting(lightinfopanel)</visible>
 				</control>
@@ -1929,14 +1871,15 @@
           <posx>75</posx>
           <width>1130</width>
           <height>590</height>
-          <texture border="0,0,0,204">views/tablet_template.png</texture>
+          <texture background="true" border="0,0,0,204">views/tablet_template.png</texture>
+          <include>Animation_CommonFade</include>
           <animation effect="zoom" start="75,26,1130,590" end="100,26,1130,550" time="250" reversible="false" condition="[Control.IsVisible(510)+Skin.HasSetting(posterslide)]">Conditional</animation>
         </control>
         <control type="image">
 					<posx>75</posx>
 					<width>1130</width>
 					<height>590</height>
-					<texture border="0,0,0,204">views/fanart_layout.png</texture>
+					<texture background="true" border="0,0,0,204">views/fanart_layout.png</texture>
 					<animation effect="zoom" start="75,26,1130,590" end="100,26,1130,550" time="250" reversible="false" condition="[Control.IsVisible(510)+Skin.HasSetting(posterslide)]">Conditional</animation>
 					<visible>[Control.IsVisible(510)+Skin.HasSetting(posterslide)]|Container.Content(episodes)|Container.Content(tvshows)|Container.Content(seasons)|[Container.Content(movies)+Skin.HasSetting(fanartinfopane)+Control.IsVisible(501)]|[Container.Content(movies)+Skin.HasSetting(fanartinfopane503)+Control.IsVisible(503)]|[Container.Content(movies)+Skin.HasSetting(fanartinfopane504)+Control.IsVisible(504)]</visible>
 				</control>
@@ -1944,7 +1887,7 @@
 					<posx>75</posx>
 					<width>1130</width>
 					<height>590</height>
-					<texture border="0,0,0,204">views/poster_layout.png</texture>
+					<texture background="true" border="0,0,0,204">views/poster_layout.png</texture>
 					<visible>Container.Content(movies)+[Skin.HasSetting(extrathumbs)+Control.isVisible(501)|Skin.HasSetting(posterinfopane)+Control.IsVisible(501)|Skin.HasSetting(extrathumbs503)+Control.isVisible(503)|Skin.HasSetting(posterinfopane503)+Control.IsVisible(503)|Skin.HasSetting(extrathumbs504)+Control.isVisible(504)|Skin.HasSetting(posterinfopane504)+Control.IsVisible(504)]</visible>
 				</control>
 				<include condition="Skin.HasSetting(fourthumbs)|Skin.HasSetting(fourthumbs503)|Skin.HasSetting(fourthumbs504)">4thumbs_tablet</include>
@@ -2027,9 +1970,12 @@
 					<label>31274</label>
 					<visible>[!Skin.HasSetting(fourthumbs)+!Skin.HasSetting(fanartinfopane)+!Skin.HasSetting(posterinfopane)+!Skin.HasSetting(extrathumbs)+Control.IsVisible(501)+Container.Content(movies)]|[!Skin.HasSetting(fourthumbs503)+!Skin.HasSetting(fanartinfopane503)+!Skin.HasSetting(posterinfopane503)+!Skin.HasSetting(extrathumbs503)+Control.IsVisible(503)+Container.Content(movies)]|[!Skin.HasSetting(fourthumbs504)+!Skin.HasSetting(fanartinfopane504)+!Skin.HasSetting(posterinfopane504)+!Skin.HasSetting(extrathumbs504)+Control.IsVisible(504)+Container.Content(movies)]</visible>
 				</control>
+				<include condition="Skin.HasSetting(extrathumbs)|Skin.HasSetting(extrathumbs503)|Skin.HasSetting(extrathumbs504)">InfoPane_Extrathumbs_Movies</include>
 				<include>InfoPane_Fanart_Movies</include>
-				<include condition="Skin.HasSetting(posterinfopane)|Skin.HasSetting(posterinfopane503)|Skin.HasSetting(posterinfopane504)|Skin.HasSetting(extrathumbs)|Skin.HasSetting(extrathumbs503)|Skin.HasSetting(extrathumbs504)">InfoPane_Poster_Movies</include>
-				<include condition="Skin.HasSetting(extrathumbs)|Skin.HasSetting(extrathumbs503)|Skin.HasSetting(extrathumbs504)|Skin.HasSetting(fourthumbs)|Skin.HasSetting(fourthumbs503)|Skin.HasSetting(fourthumbs504)">ExtraThumbs</include>
+				<include condition="Skin.HasSetting(posterinfopane)|Skin.HasSetting(posterinfopane503)|Skin.HasSetting(posterinfopane504)">InfoPane_Poster_Movies</include>
+				<include condition="Skin.HasSetting(fourthumbs)|Skin.HasSetting(fourthumbs503)|Skin.HasSetting(fourthumbs504)">InfoPane_Fourthumbs_Movies</include>
+				<include>InfoPane_Fanart_TVShows</include>
+				<include>InfoPane_Fanart_Episodes</include>
 			</control>
 			<control type="group">
 				<!--Video Window-->

@@ -29,7 +29,7 @@
     </control>
     <control type="button" id="10">
       <description>OK button</description>
-      <include>HiddenObject</include>
+      <include>HiddenObject</include>      
       <label>186</label>
       <font>-</font>
       <textcolor>-</textcolor>

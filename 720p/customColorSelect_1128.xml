@@ -1,6 +1,5 @@
 <window id="1128" type="dialog">
   <defaultcontrol>10</defaultcontrol>
-  <onunload>ClearProperty(Selector.Shortcut,home)</onunload>
   <zorder>4</zorder>
   <coordinates>
     <system>1</system>
@@ -12,10 +11,9 @@
     <control type="group">
       <include>Dialogs_Group</include>
       <include>Dialogs_Tablet</include>
-      <include>Dialogs_Settings</include>
-      <animation effect="slide" start="0,0" end="0,-580" time="0" condition="Window.IsActive(home)">Conditional</animation>
+      <include>Dialogs_Exclam</include>
       <include>SmallerDialogs</include>
-      <animation effect="slide" start="0,0" end="0,-580" time="0" condition="!Window.IsActive(home)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-580" time="0" condition="true">Conditional</animation>
       <control type="wraplist" id="10">
         <posx>100</posx>
         <posy>3</posy>
@@ -144,7 +142,6 @@
             <icon>close.png</icon>
             <thumb>-</thumb>
             <onclick>Dialog.Close(1128)</onclick>
-            <onclick condition="stringcompare(Window(home).Property(Selector.Shortcut),1)">ActivateWindow(1129)</onclick>
           </item>
           <item id="16">
             <label>351</label>
@@ -161,8 +158,26 @@
         <align>center</align>
         <include>Dialogs_Label3</include>
         <label>$INFO[Container(10).ListItem.Label]</label>
+        <animation effect="slide" start="0,0" end="-20,0" time="0" condition="false">Conditional</animation>
       </control>
-      <include>Dialogs_Arrows</include>
+      <control type="image">
+        <description>left arrow</description>
+        <posx>195</posx>
+        <posy>62</posy>
+        <width>20</width>
+        <height>20</height>
+        <texture>views/multiplex_arrow2.png</texture>
+        <include>Animation_CommonFade</include>
+      </control>
+      <control type="image">
+        <description>right arrow</description>
+        <posx>322</posx>
+        <posy>62</posy>
+        <width>20</width>
+        <height>20</height>
+        <texture>views/multiplex_arrow.png</texture>
+        <include>Animation_CommonFade</include>
+      </control>
     </control>
   </controls>
 </window>

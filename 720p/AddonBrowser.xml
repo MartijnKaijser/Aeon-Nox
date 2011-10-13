@@ -37,20 +37,20 @@
       <include>ShowcaseQuadrate</include>
       <include>AddonWall</include>
     </control>
-    <include>FloorLabels</include>    
+    <control type="button" id="7000">
+      <include>HiddenObject</include>
+      <onfocus>SetFocus(9000)</onfocus>
+      <visible>Control.IsVisible(509)</visible>
+    </control>
     <control type="group">
       <include>Animation_OpenCloseZoom</include>
       <visible>Control.IsVisible(509)|Control.IsVisible(500)</visible>
       <include>Furniture_DarkGradient</include>
     </control>
+    <include>BehindDialogFadeOut</include>
     <control type="group">
       <visible>Control.IsVisible(512)|Control.IsVisible(50)</visible>
       <include>VideoWindowPosters</include>
-    </control>
-    <control type="button" id="7000">
-      <include>HiddenObject</include>
-      <onfocus>SetFocus(9000)</onfocus>
-      <visible>Control.IsVisible(509)</visible>
     </control>
     <include>ScrollOffsetLabel</include>
     <include>Media_Menu</include>

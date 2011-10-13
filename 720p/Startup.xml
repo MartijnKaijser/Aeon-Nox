@@ -1,8 +1,10 @@
 <window>
   <defaultcontrol always="true">10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <onload condition="IsEmpty(Skin.String(diffuse))">Skin.SetString(diffuse,FF6db9e5)</onload>
-  <onload condition="IsEmpty(Skin.String(diffuse_bar))">Skin.SetString(diffuse_bar,FFFFFFFF)</onload>
+  <include condition="IsEmpty(Skin.String(diffuse))">LoadSpotDiffuseColor</include>
+  <include condition="IsEmpty(Skin.String(diffuse_bar))">LoadTopbarDiffuseColor</include>
+  <include condition="Library.HasContent(tvshows)">LoadTVNextAired</include>
+  <include condition="[Skin.HasSetting(HomeRandomMovies)|Skin.HasSetting(HomeRandomTV)|Skin.HasSetting(HomeRandomMusic)|Skin.HasSetting(HomeRandomPoster)]">LoadRandomItems</include>
   <controls>
     <control type="button" id="10">
       <description>trigger</description>
@@ -18,10 +20,6 @@
       <texturenofocus>-</texturenofocus>
       <texturefocus>-</texturefocus>
       <visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
-    </control>
-    <control type="image">
-      <include>FullscreenDimensions</include>
-      <texture>common/black.png</texture>
     </control>
   </controls>
 </window>

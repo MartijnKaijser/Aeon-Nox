@@ -1,5 +1,5 @@
 <window id="1114" type="dialog">
-  <defaultcontrol always="true">8</defaultcontrol>
+  <defaultcontrol>10</defaultcontrol>
   <zorder>4</zorder>
   <coordinates>
     <system>1</system>
@@ -9,15 +9,6 @@
   <include>Animation_DialogPopup</include>
   <controls>
     <control type="group">
-      <control type="button" id="8">
-        <include>HiddenObject</include>
-        <onfocus condition="Skin.HasSetting(1sec)|[!Skin.HasSetting(1sec)+!Skin.HasSetting(2sec)+!Skin.HasSetting(3sec)+!Skin.HasSetting(4sec)+!Skin.HasSetting(5sec)]">SetFocus(10)</onfocus>
-        <onfocus condition="Skin.HasSetting(2sec)">SetFocus(11)</onfocus>
-        <onfocus condition="Skin.HasSetting(3sec)">SetFocus(12)</onfocus>
-        <onfocus condition="Skin.HasSetting(4sec)">SetFocus(13)</onfocus>
-        <onfocus condition="Skin.HasSetting(5sec)">SetFocus(14)</onfocus>
-        <visible>true</visible>
-      </control>
       <include>Dialogs_Group</include>
       <include>Dialogs_Tablet</include>
       <include>Dialogs_Exclam</include>

@@ -1221,7 +1221,7 @@
             <font>Font_Reg20</font>
             <align>left</align>
             <aligny>center</aligny>
-            <label>$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
+            <label>$INFO[Window.Property(Current.FeelsLike)] $INFO[System.TemperatureUnits]</label>
             <textcolor>white</textcolor>
             <shadowcolor>black</shadowcolor>
           </control>
@@ -1234,7 +1234,7 @@
             <font>Font_Reg20</font>
             <align>left</align>
             <aligny>center</aligny>
-            <label>$INFO[Window.Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
+            <label>$INFO[Window.Property(Current.DewPoint)] $INFO[System.TemperatureUnits]</label>
             <textcolor>white</textcolor>
             <shadowcolor>black</shadowcolor>
           </control>
@@ -1359,7 +1359,7 @@
               <posx>110</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day0.HighTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1385,7 +1385,7 @@
               <posx>290</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1473,7 +1473,7 @@
               <posx>110</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day1.HighTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1499,7 +1499,7 @@
               <posx>290</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1587,7 +1587,7 @@
               <posx>110</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day2.HighTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1613,7 +1613,7 @@
               <posx>290</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1701,7 +1701,7 @@
               <posx>110</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day3.HighTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1727,7 +1727,7 @@
               <posx>290</posx>
               <posy>50</posy>
               <height>20</height>
-              <label>$INFO[Window.Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>
+              <label>$INFO[Window.Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
               <font>Font_Reg20</font>
               <align>left</align>
               <aligny>center</aligny>
@@ -1786,9 +1786,9 @@
     <posy>50</posy>
     <width>25</width>
     <height>465</height>
-    <texturesliderbackground border="0,14,0,14">views/scrollBarV.png</texturesliderbackground>
-    <texturesliderbar border="0,14,0,14">views/scrollBarV_bar.png</texturesliderbar>
-    <texturesliderbarfocus border="0,14,0,14">views/scrollBarV_bar_focus.png</texturesliderbarfocus>
+    <texturesliderbackground border="0,14,0,14">views/ScrollBarV.png</texturesliderbackground>
+    <texturesliderbar border="0,14,0,14">views/ScrollBarV_bar.png</texturesliderbar>
+    <texturesliderbarfocus border="0,14,0,14">views/ScrollBarV_bar_focus.png</texturesliderbarfocus>
     <textureslidernib>views/ScrollBarNib.png</textureslidernib>
     <textureslidernibfocus>views/ScrollBarNib.png</textureslidernibfocus>
     <showonepage>true</showonepage>
@@ -1937,6 +1937,7 @@
       <texture>views/separator_vertical.png</texture>
     </control>
   </include>
+
   <include name="TWC.36Hour">
     <control type="group">
       <posx>290</posx>
@@ -2408,6 +2409,7 @@
     <shadowcolor>black</shadowcolor>
     <include>TWC.Current.ConditionLabelsCommon</include>
   </include>
+
   <include name="TWC.Current">
     <control type="group">
       <posx>290</posx>
@@ -2421,12 +2423,12 @@
           <posx>10</posx>
           <control type="label">
             <description>current temp value</description>
-            <posx>30</posx>
-            <posy>90</posy>
-            <width>140</width>
+            <posx>115</posx>
+            <posy>70</posy>
+            <width>180</width>
             <height>40</height>
             <font>Font_MainMenu</font>
-            <align>center</align>
+            <align>right</align>
             <aligny>center</aligny>
             <label>$INFO[Window.Property(Current.Temperature)]</label>
             <textcolor>white</textcolor>
@@ -2435,12 +2437,12 @@
           </control>
           <control type="label">
             <description>current temp value units</description>
-            <posx>76</posx>
-            <posy>90</posy>
-            <width>140</width>
+            <posx>135</posx>
+            <posy>62</posy>
+            <width>100</width>
             <height>20</height>
             <font>Font_Reg25</font>
-            <align>center</align>
+            <align>left</align>
             <aligny>center</aligny>
             <info>System.TemperatureUnits</info>
             <textcolor>white</textcolor>
@@ -4036,6 +4038,7 @@
     <aligny>center</aligny>
     <wrapmultiline>true</wrapmultiline>
   </include>
+
   <include name="TWC.Daily">
     <control type="group">
       <posx>290</posx>
@@ -5935,6 +5938,7 @@
     <aligny>center</aligny>
     <wrapmultiline>true</wrapmultiline>
   </include>
+
   <include name="TWC.Hourly">
     <control type="group">
       <posx>290</posx>
@@ -6644,7 +6648,7 @@
         <width>230</width>
         <height>155</height>
         <aspectratio>stretch</aspectratio>
-        <bordertexture border="10">ThumbShadow.png</bordertexture>
+        <bordertexture border="10">thumbs/ThumbShadow.png</bordertexture>
         <bordersize>8</bordersize>
         <fadetime>200</fadetime>
         <texture border="2">ThumbBG.png</texture>
@@ -6705,6 +6709,7 @@
     <texturefocus border="5">button-focus.png</texturefocus>
     <textoffsetx>20</textoffsetx>
   </include>
+
   <include name="TWC.Maps">
     <control type="group">
       <posx>290</posx>
@@ -7158,6 +7163,7 @@
       </item>
     </content>
   </include>
+
   <include name="MapsList2.Content">
     <content>
       <item>
@@ -7432,6 +7438,7 @@
       </item>
     </content>
   </include>
+
   <include name="MapsList3.Content">
     <content>
       <item>
@@ -7750,6 +7757,7 @@
     <width>840</width>
     <height>472</height>
   </include>
+
   <include name="TWC.Video">
     <control type="group">
       <posx>290</posx>
@@ -8025,6 +8033,7 @@
       <label>$LOCALIZE[31926]:</label>
     </control>
   </include>
+
   <include name="TWC.Weekend">
     <control type="group">
       <posx>290</posx>
@@ -8693,6 +8702,7 @@
       </control>
     </control>
   </include>
+
   <include name="Weather_Plus">
     <defaultcontrol always="true">20000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
@@ -8760,6 +8770,7 @@
           <visible>!IsEmpty(Window.Property(Weather.CurrentView))</visible>
         </control>
         <include>Furniture_SettingsBackPanel</include>
+
         <control type="group">
           <posx>60</posx>
           <posy>40</posy>
@@ -8826,6 +8837,7 @@
             <include>TWC.Alerts</include>
             <include>TWC.Video</include>
           </control>
+
           <!-- Main Menu Buttons -->
           <control type="grouplist" id="2000">
             <description>control area</description>

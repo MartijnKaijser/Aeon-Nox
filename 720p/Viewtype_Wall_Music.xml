@@ -11,7 +11,7 @@
       <control type="image">
         <include>WallIconDimensions</include>
         <bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
-        <texture>wall/wall_nfoverlay.png</texture>
+        <texture background="true">wall/wall_nfoverlay.png</texture>
       </control>
     </itemlayout>
     <focusedlayout width="133" height="133" condition="!Skin.HasSetting(smallmusicwall)">
@@ -31,7 +31,7 @@
       <control type="image">
         <include>WallIconDimensions</include>
         <bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
-        <texture>wall/wall_nfoverlay.png</texture>
+        <texture background="true">wall/wall_nfoverlay.png</texture>
         <animation type="Focus" condition="Container(500).Row(3)" reversible="false">
           <effect type="fade" start="100" end="0" time="200" reversible="false" />
           <effect type="zoom" center="66,100" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false"/>
@@ -66,7 +66,7 @@
       <control type="image">
         <include>WallIconDimensionsSmall</include>
         <bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
-        <texture>wall/wall_nfoverlay.png</texture>
+        <texture background="true">wall/wall_nfoverlay.png</texture>
       </control>
     </itemlayout>
     <focusedlayout width="106" height="106" condition="Skin.HasSetting(smallmusicwall)">
@@ -86,7 +86,7 @@
       <control type="image">
         <include>WallIconDimensionsSmall</include>
         <bordertexture border="-3">wall/wall_nfborder.png</bordertexture>
-        <texture>wall/wall_nfoverlay.png</texture>
+        <texture background="true">wall/wall_nfoverlay.png</texture>
         <animation type="Focus" condition="Container(500).Row(1) | Container(500).Row(2) | Container(500).Row(3) | Container(500).Row(0)" reversible="false">
           <effect type="fade" start="100" end="0" time="200" reversible="false" />
           <effect type="zoom" center="51,51" start="100" end="190" time="400" easing="out" tween="cubic" reversible="false"/>
@@ -119,13 +119,13 @@
       <posy>93</posy>
       <height>540</height>
       <pagecontrol>65</pagecontrol>
-      <scrolltime tween="quadratic" easing="out">200</scrolltime>
+      <scrolltime>200</scrolltime>
       <onleft>500</onleft>
       <onright>500</onright>
       <onup>SetFocus(9000)</onup>
       <ondown>65</ondown>
       <orientation>horizontal</orientation>
-      <visible>[Window.IsActive(pictures) | Window.IsActive(musicplaylist) |Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(AddonBrowser) | Container.Content(addons)]+!Container.Content(genres)</visible>
+      <visible>[Window.IsActive(pictures) | Window.IsActive(musicplaylist) |Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(AddonBrowser) | stringcompare(Container.FolderPath,addons://sources/video/) | Substring(Container.FolderPath,videodb://5)]+!Container.Content(genres)</visible>
       <include>WallMusicContent</include>
     </control>
     <control type="scrollbar" id="65">
@@ -133,7 +133,7 @@
       <posy>670</posy>
       <width>670</width>
       <height>41</height>
-      <visible allowhiddenfocus="true">Control.HasFocus(65)</visible>
+      <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(500)|ControlGroup(9000).HasFocus">Conditional</animation>
       <texturesliderbackground border="14,0,14,0">views/scrollBarH.png</texturesliderbackground>
       <texturesliderbar border="14,0,14,0">views/scrollBarH_bar.png</texturesliderbar>
       <texturesliderbarfocus border="14,0,14,0">views/scrollBarH_bar_focus.png</texturesliderbarfocus>
@@ -154,13 +154,13 @@
       <posy>93</posy>
       <height>532</height>
       <pagecontrol>65</pagecontrol>
-      <scrolltime tween="quadratic" easing="out">200</scrolltime>
+      <scrolltime>200</scrolltime>
       <onleft>9000</onleft>
       <onright>65</onright>
       <onup>500</onup>
       <ondown>500</ondown>
       <orientation>vertical</orientation>
-      <visible>[Window.IsActive(pictures) | Window.IsActive(musicplaylist) |Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(AddonBrowser) | Container.Content(addons)]+!Container.Content(genres)</visible>
+      <visible>[Window.IsActive(pictures) | Window.IsActive(musicplaylist) |Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(AddonBrowser) | stringcompare(Container.FolderPath,addons://sources/video/) | Substring(Container.FolderPath,videodb://5)]+!Container.Content(genres)</visible>
       <include>WallMusicContent</include>
     </control>
     <control type="scrollbar" id="65">
@@ -168,7 +168,7 @@
       <posy>92</posy>
       <width>65</width>
       <height>535</height>
-      <visible allowhiddenfocus="true">Control.HasFocus(65)</visible>
+      <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(500)|ControlGroup(9000).HasFocus">Conditional</animation>
       <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
       <texturesliderbar>-</texturesliderbar>
       <texturesliderbarfocus>-</texturesliderbarfocus>
@@ -184,14 +184,17 @@
    <include name="Viewtype_Wall">
     <control type="group">
       <visible>Control.IsVisible(500)</visible>
-      <include>Animation_VisibleChange200</include>
-      <include>Animation_OpenCloseZoom_New</include>
       <include condition="!Skin.HasSetting(smallmusicwall)">Furniture_Wall_Music</include>
       <include condition="Skin.HasSetting(smallmusicwall)">Furniture_Wall_Music_Small</include>
       <include>Furniture_WallVignette</include>
       <include>WallArrows</include>
       <include condition="!Skin.HasSetting(WallMusicVertical)">WallMusicHor</include>
       <include condition="Skin.HasSetting(WallMusicVertical)">WallMusicVert</include>
+      <control type="group">
+        <visible>!Control.HasFocus(65)</visible>
+        <include>SecondLabelFloor</include>
+        <include>FirstLabelFloor</include>
+      </control>
     </control>
   </include>
 </includes>

@@ -121,8 +121,7 @@
           <width>721</width>
           <height>40</height>
           <textcolor>grey2</textcolor>
-         <selectedcolor>selected</selectedcolor>
-           <aligny>center</aligny>
+          <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label</info>
         </control>
@@ -141,8 +140,7 @@
           <width>721</width>
           <height>40</height>
           <textcolor>white</textcolor>
-         <selectedcolor>selected</selectedcolor>
-           <aligny>center</aligny>
+          <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label</info>
         </control>
@@ -174,7 +172,6 @@
           <width>280</width>
           <height>40</height>
           <textcolor>grey2</textcolor>
-         <selectedcolor>selected</selectedcolor>
           <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label</info>
@@ -185,7 +182,6 @@
           <width>280</width>
           <height>40</height>
           <textcolor>grey2</textcolor>
-         <selectedcolor>grey2</selectedcolor>
           <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label2</info>
@@ -230,8 +226,7 @@
           <width>280</width>
           <height>40</height>
           <textcolor>white</textcolor>
-                  <selectedcolor>selected</selectedcolor>
-           <aligny>center</aligny>
+          <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label</info>
         </control>
@@ -241,7 +236,6 @@
           <width>280</width>
           <height>40</height>
           <textcolor>grey2</textcolor>
-         <selectedcolor>grey2</selectedcolor>
           <aligny>center</aligny>
           <font>Font_Reg19</font>
           <info>ListItem.Label2</info>

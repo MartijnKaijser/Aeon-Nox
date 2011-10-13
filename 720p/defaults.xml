@@ -17,25 +17,23 @@
 		<posy>60</posy>
 		<font>font13</font>
 		<textcolor>white</textcolor>
-    <pauseatend>3000</pauseatend>
-    <scrollout>false</scrollout>
-  </default>
-	<default type="button">
-		<posx>300</posx>
-		<posy>200</posy>
-		<width>300</width>
-		<height>42</height>
+	</default>
+  <default type="button">
+    <posx>300</posx>
+    <posy>200</posy>
+    <width>300</width>
+    <height>42</height>
     <texturenofocus border="5">dialogs/context_nofocus.png</texturenofocus>
     <texturefocus border="5">dialogs/context_highlight.png</texturefocus>
     <font>Font_OSDSeek2</font>
-		<textcolor>white</textcolor>
-		<disabledcolor>grey3</disabledcolor>
+    <textcolor>white</textcolor>
+    <disabledcolor>grey3</disabledcolor>
     <focusedcolor>white</focusedcolor>
     <textoffsetx>7</textoffsetx>
-		<aligny>center</aligny>
+    <aligny>center</aligny>
     <pulseonselect>no</pulseonselect>
-	</default>
-	<default type="togglebutton">
+  </default>
+  <default type="togglebutton">
     <posx>300</posx>
     <posy>200</posy>
     <width>300</width>
@@ -51,8 +49,8 @@
     <textoffsetx>7</textoffsetx>
     <aligny>center</aligny>
     <pulseonselect>no</pulseonselect>
-	</default>
-	<default type="textbox">
+  </default>
+  <default type="textbox">
 		<posx>220</posx>
 		<posy>220</posy>
 		<width>410</width>
@@ -82,11 +80,11 @@
 	<default type="spincontrol">
 		<posx>330</posx>
 		<posy>126</posy>
-		<textureup>settings/spin-up.png</textureup>
-		<texturedown>settings/spin-down.png</texturedown>
-		<textureupfocus>settings/spin-up-focus.png</textureupfocus>
-		<texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-		<align>right</align>
+    <textureup>settings/spin-up.png</textureup>
+    <texturedown>settings/spin-down.png</texturedown>
+    <textureupfocus>settings/spin-up-focus.png</textureupfocus>
+    <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+    <align>right</align>
 		<width>40</width>
 		<height>65</height>
 		<font>font13</font>
@@ -202,20 +200,18 @@
 		<aligny>center</aligny>
 		<pulseonselect>no</pulseonselect>
 	</default>
-			<default type="scrollbar">
-				<posx>305</posx>
-				<posy>670</posy>
-				<width>670</width>
-				<height>41</height>
-				<texturesliderbackground border="14,0,14,0">views/scrollBarH.png</texturesliderbackground>
-				<texturesliderbar border="14,0,14,0">views/scrollBarH_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="14,0,14,0">views/scrollBarH_bar_focus.png</texturesliderbarfocus>
-				<textureslidernib>views/scrollBarNib.png</textureslidernib>
-				<textureslidernibfocus>views/scrollBarNib2.png</textureslidernibfocus>
-				<pulseonselect>yes</pulseonselect>
-				<showonepage>true</showonepage>
-				<orientation>horizontal</orientation>
-        <animation effect="fade" time="200">Visible</animation>
-        <animation effect="fade" time="200">Hidden</animation>
-      </default>
+  <default type="scrollbar">
+    <posx>305</posx>
+    <posy>670</posy>
+    <width>670</width>
+    <height>41</height>
+    <texturesliderbackground border="14,0,14,0">views/scrollBarH.png</texturesliderbackground>
+    <texturesliderbar border="14,0,14,0">views/scrollBarH_bar.png</texturesliderbar>
+    <texturesliderbarfocus border="14,0,14,0">views/scrollBarH_bar_focus.png</texturesliderbarfocus>
+    <textureslidernib>views/scrollBarNib.png</textureslidernib>
+    <textureslidernibfocus>views/scrollBarNib2.png</textureslidernibfocus>
+    <pulseonselect>yes</pulseonselect>
+    <showonepage>true</showonepage>
+    <orientation>horizontal</orientation>
+  </default>
 </includes>

@@ -160,19 +160,6 @@
           <width>420</width>
           <height>13</height>
           <texturebg>osd/seek/progress_back_long.png</texturebg>
-          <lefttexture>osd/seek/progresscache_left.png</lefttexture>
-          <midtexture>osd/seek/progresscache_mid.png</midtexture>
-          <righttexture>osd/seek/progresscache_right.png</righttexture>
-          <overlaytexture>-</overlaytexture>
-          <info>Player.ProgressCache</info>
-        </control>
-        <control type="progress" id="20">
-          <description>Progressbar</description>
-          <posx>430</posx>
-          <posy>38</posy>
-          <width>420</width>
-          <height>13</height>
-          <texturebg>osd/seek/progresscache_back_long.png</texturebg>
           <lefttexture>osd/seek/progress_left.png</lefttexture>
           <midtexture>osd/seek/progress_mid.png</midtexture>
           <righttexture>osd/seek/progress_right.png</righttexture>
@@ -367,19 +354,6 @@
               <width>420</width>
               <height>13</height>
               <texturebg>osd/seek/progress_back_long.png</texturebg>
-              <lefttexture>osd/seek/progresscache_left.png</lefttexture>
-              <midtexture>osd/seek/progresscache_mid.png</midtexture>
-              <righttexture>osd/seek/progresscache_right.png</righttexture>
-              <overlaytexture>-</overlaytexture>
-              <info>Player.ProgressCache</info>
-            </control>
-            <control type="progress" id="20">
-              <description>Progressbar</description>
-              <posx>430</posx>
-              <posy>38</posy>
-              <width>420</width>
-              <height>13</height>
-              <texturebg>osd/seek/progresscache_back_long.png</texturebg>
               <lefttexture>osd/seek/progress_left.png</lefttexture>
               <midtexture>osd/seek/progress_mid.png</midtexture>
               <righttexture>osd/seek/progress_right.png</righttexture>
@@ -776,12 +750,46 @@
             <visible>!Skin.HasSetting(sourceflags)|[!SubString(Player.Filenameandpath,PDTV)+!SubString(Player.Filenameandpath,sdtv)+!SubString(Player.Filenameandpath,hdtv)+!SubString(Player.Filenameandpath,hddvd)+!SubString(Player.Filenameandpath,hd-dvd)+!SubString(Player.Filenameandpath,bluray)+!SubString(Player.Filenameandpath,blu-ray)+!SubString(Player.Filenameandpath,bdrip)+!SubString(Player.Filenameandpath,brrip)+!SubString(Player.Filenameandpath,dvd)+!SubString(Player.Filenameandpath,dvb)+!SubString(Player.Filenameandpath,.iso,Right)+!SubString(Player.Filenameandpath,.ifo)+!SubString(Player.Filenameandpath,web-dl)]</visible>
             <animation effect="slide" start="0" end="30" reversible="false" condition="Skin.HasSetting(nostudioratingflags)">Conditional</animation>
           </control>
-          <control type="image">
+          <control type="group">
             <posx>10</posx>
             <posy>8</posy>
+            <visible>Skin.HasSetting(sourceflags)</visible>
             <animation effect="slide" start="0" end="30" reversible="false" condition="Skin.HasSetting(nostudioratingflags)">Conditional</animation>
-            <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/source/defaultsource.png">$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/sdtv.png</texture>
+              <visible>SubString(Player.Filenameandpath,PDTV) | SubString(Player.Filenameandpath,sdtv)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/hdtv.png</texture>
+              <visible>SubString(Player.Filenameandpath,hdtv)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/hddvd.png</texture>
+              <visible>SubString(Player.Filenameandpath,hddvd) | SubString(Player.Filenameandpath,hd-dvd)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/bluray.png</texture>
+              <visible>SubString(Player.Filenameandpath,bluray) | SubString(Player.Filenameandpath,blu-ray) | SubString(Player.Filenameandpath,bdrip) | SubString(Player.Filenameandpath,brrip)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/dvd.png</texture>
+              <visible>[SubString(Player.Filenameandpath,dvd) + !SubString(Player.Filenameandpath,hddvd) + !SubString(Player.Filenameandpath,hd-dvd) + !SubString(Player.Filenameandpath,bluray)] | [SubString(Player.Filenameandpath,.iso,Right) + !SubString(Player.Filenameandpath,bluray)] | SubString(Player.Filenameandpath,.ifo,Right)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/dvb.png</texture>
+              <visible>SubString(Player.Filenameandpath,dvb)</visible>
+            </control>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>flags/source/web-dl.png</texture>
+              <visible>SubString(Player.Filenameandpath,web-dl)</visible>
+            </control>
           </control>
           <control type="image">
             <posx>110</posx>
@@ -790,37 +798,155 @@
             <texture fallback="flags/studios/default-studio.png">$INFO[VideoPlayer.Studio,flags/studios/,.png]</texture>
             <visible>!Skin.HasSetting(nostudioratingflags)</visible>
           </control>
-          <control type="image">
+          <control type="group">
             <description>Rating Flags</description>
             <posx>210</posx>
             <posy>8</posy>
-            <include>OSDRatingVars</include>
-            <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[VideoRatingFlagVar,flags/rating/,.png]</texture>
             <visible>!Skin.HasSetting(nostudioratingflags)</visible>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
+              <visible>[IsEmpty(VideoPlayer.mpaa)|SubString(VideoPlayer.Mpaa,not yet rated)]+!IsEmpty(VideoPlayer.Title)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_G_Certificate_US.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,US:G) | SubString(VideoPlayer.mpaa,USA:G) | SubString(VideoPlayer.mpaa,Rated G)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_PG_Certificate_US.png</texture>
+              <visible>[Substring(VideoPlayer.mpaa,Rated PG) | StringCompare(VideoPlayer.mpaa,PG)] + !substring(VideoPlayer.mpaa,PG-13)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_PG-13_Certificate_US.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,PG-13)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_R_Certificate_US.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,US:R) | SubString(VideoPlayer.mpaa,USA:R) | SubString(VideoPlayer.mpaa,Rated R) | StringCompare(VideoPlayer.mpaa,R)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/MPAA_NC-17_Certificate_US.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,US:NC-17) | SubString(VideoPlayer.mpaa,USA:NC-17) | SubString(VideoPlayer.mpaa,Rated NC-17)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/TV-G_Certificate_US.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-G)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/TV-PG_Certificate_US.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-PG)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/TV-14_Certificate_US.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-14)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/TV-MA_Certificate_US.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-MA)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/tv-y.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-Y)+!substring(VideoPlayer.mpaa,TV-Y7)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/tv-y7.png</texture>
+              <visible>substring(VideoPlayer.mpaa,TV-Y7)</visible>
+            </control>
+            <!--UK-->
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_U_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:U)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_PG_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:PG)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_12_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:12) + !SubString(VideoPlayer.mpaa,UK:12A)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_12A_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:12A)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_15_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:15)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/BBFC_18_Certificate_UK.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,UK:18)</visible>
+            </control>
+            <!--Germany-->
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/FSK-0.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,Germany:0) | SubString(VideoPlayer.mpaa,o.A)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/FSK-6.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,Germany:6) | SubString(VideoPlayer.mpaa,ab 6) | StringCompare(VideoPlayer.mpaa,6)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/FSK-12.png</texture>
+              <visible>[SubString(VideoPlayer.mpaa,Germany:12) | SubString(VideoPlayer.mpaa,ab 12) | StringCompare(VideoPlayer.mpaa,12)]+!SubString(VideoPlayer.mpaa,UK:12)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/FSK-16.png</texture>
+              <visible>SubString(VideoPlayer.mpaa,Germany:16) | SubString(VideoPlayer.mpaa,ab 16) | StringCompare(VideoPlayer.mpaa,16)</visible>
+            </control>
+            <control type="image">
+              <include>OSDRatingVars</include>
+              <texture>flags/rating/FSK-18.png</texture>
+              <visible>[SubString(VideoPlayer.mpaa,Germany:18) | SubString(VideoPlayer.mpaa,ab 18) | StringCompare(VideoPlayer.mpaa,18)]+!SubString(VideoPlayer.mpaa,UK:18)</visible>
+            </control>
           </control>
           <control type="image">
             <posx>980</posx>
             <posy>8</posy>
             <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+            <texture>$INFO[videoplayer.VideoAspect,flags/aspectratio/,.png]</texture>
             <animation effect="slide" start="0" end="-800" reversible="false" condition="Skin.HasSetting(nostudioratingflags)">Conditional</animation>
           </control>
           <control type="image">
             <posx>1080</posx>
             <posy>8</posy>
             <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+            <texture>$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
             <animation effect="slide" start="0" end="-70" reversible="false" condition="Skin.HasSetting(nostudioratingflags)">Conditional</animation>
           </control>
-          <control type="image">
+          <control type="group">
             <description>Audio Flags</description>
             <posx>1180</posx>
             <posy>8</posy>
             <animation effect="slide" start="0" end="-30" reversible="false" condition="Skin.HasSetting(nostudioratingflags)">Conditional</animation>
-            <include>OSDAudioFlagsVars</include>
-            <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/info/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+            <control type="image">
+              <include>OSDAudioFlagsVars</include>
+              <texture>$INFO[VideoPlayer.AudioCodec,flags/info/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+            </control>
           </control>
         </control>
+
 
         <control type="group" id="4004">
           <description>Bottom Bar</description>
@@ -900,7 +1026,7 @@
             <posy>400</posy>
             <width>207</width>
             <height>310</height>
-            <texture diffuse="thumbs/movieposter_mask.png">common/blank.png</texture>
+            <texture background="true" diffuse="thumbs/movieposter_mask.png">common/blank.png</texture>
             <bordertexture border="-25">thumbs/poster_shadow.png</bordertexture>
             <aspectratio aligny="bottom">stretch</aspectratio>
             <animation type="WindowOpen">
@@ -935,22 +1061,8 @@
             <posy>665</posy>
             <width>760</width>
             <height>15</height>
-            <info>Player.ProgressCache</info>
-            <texturebg>osd/info/osd_progress_back.png</texturebg>
-            <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
-            <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
-            <righttexture>osd/info/osd_progresscache_right.png</righttexture>
-            <overlaytexture>-</overlaytexture>
-            <visible>true</visible>
-          </control>
-          <control type="progress" id="23">
-            <description>Progressbar</description>
-            <posx>260</posx>
-            <posy>665</posy>
-            <width>760</width>
-            <height>15</height>
             <info>Player.Progress</info>
-            <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+            <texturebg>osd/info/osd_progress_back.png</texturebg>
             <lefttexture>osd/info/osd_progress_left.png</lefttexture>
             <midtexture>osd/info/osd_progress_mid.png</midtexture>
             <righttexture>osd/info/osd_progress_right.png</righttexture>

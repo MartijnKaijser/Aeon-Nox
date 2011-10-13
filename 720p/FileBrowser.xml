@@ -97,7 +97,7 @@
       <font>Font_Bold28</font>
       <textcolor>AAFFFFFF</textcolor>
     </control>
-    
+
     <control type="list" id="451">
       <viewtype label="List">list</viewtype>
       <posx>60</posx>

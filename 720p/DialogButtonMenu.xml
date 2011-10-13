@@ -1,12 +1,12 @@
 <window type="buttonMenu" id="111">
-	<defaultcontrol always="true">800</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+  <defaultcontrol always="true">800</defaultcontrol>
+  <coordinates>
+    <system>1</system>
+    <posx>0</posx>
+    <posy>0</posy>
+  </coordinates>
   <include>Animation_DialogZoom</include>
-	<controls>
+  <controls>
     <control type="image">
       <posx>0</posx>
       <posy>0</posy>
@@ -43,13 +43,12 @@
         <label>[UPPERCASE]$LOCALIZE[13012][/UPPERCASE]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>XBMC.Quit()</onclick>
-        <visible>System.ShowExitButton</visible>
       </control>
       <control type="button" id="2">
         <description>Powerdown XBMC</description>
-        <label>[UPPERCASE]$LOCALIZE[13016][/UPPERCASE]</label>
+        <label>[UPPERCASE]$LOCALIZE[31508][/UPPERCASE]</label>
         <include>Objects_ContextMenuButton</include>
-        <onclick>XBMC.Powerdown()</onclick>
+        <onclick>XBMC.ShutDown()</onclick>
       </control>
       <control type="button" id="3">
         <description>Shutdown Timer</description>
@@ -113,7 +112,7 @@
         <label>[UPPERCASE]$LOCALIZE[10522][/UPPERCASE]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>ActivateWindow(videoplaylist)</onclick>
-        <visible>Player.HasVideo|Window.IsActive(videos)</visible>
+        <visible>Player.HasVideo|Window.IsActive(videolibrary)|Window.IsActive(videofiles)</visible>
       </control>
       <control type="button" id="11">
         <description>Eject Tray</description>
@@ -147,14 +146,32 @@
         <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
         <visible>System.HasAlarm(shutdowntimer)</visible>
       </control>
-      <control type="button" id="22">
-        <description>Appearance</description>
-        <label>31600</label>
+      <control type="togglebutton" id="16">
+        <description>Home Visualiser (Video)</description>
+        <label>312580</label>
+        <altlabel>312579</altlabel>
         <include>Objects_ContextMenuButton</include>
-        <onclick>ActivateWindow(1129)</onclick>
+        <onclick>Skin.Togglesetting(ShowBackgroundVideo)</onclick>
+        <usealttexture>Skin.HasSetting(ShowBackgroundVideo)</usealttexture>
         <visible>Window.IsActive(home)</visible>
       </control>
-	  <control type="image" id="19">
+      <control type="togglebutton" id="17">
+        <description>Home Visualiser (Audio)</description>
+        <label>312040</label>
+        <altlabel>312030</altlabel>
+        <include>Objects_ContextMenuButton</include>
+        <onclick>Skin.Togglesetting(ShowBackgroundVis)</onclick>
+        <usealttexture>Skin.HasSetting(ShowBackgroundVis)</usealttexture>
+        <visible>Window.IsActive(home)</visible>
+      </control>
+      <control type="button" id="20">
+        <description>Favourites</description>
+        <label>31450</label>
+        <include>Objects_ContextMenuButton</include>
+        <onclick>ActivateWindow(1128)</onclick>
+        <visible>Window.IsActive(home)+[Skin.HasSetting(classichome)|Skin.HasSetting(glasshome)]</visible>
+      </control>
+      <control type="image" id="19">
         <description>Background Bottom Image</description>
         <posx>0</posx>
         <posy>466</posy>
@@ -163,5 +180,5 @@
         <texture>dialogs/context_bottom.png</texture>
       </control>
     </control>
-	</controls>
+  </controls>
 </window>

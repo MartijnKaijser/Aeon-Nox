@@ -2,6 +2,7 @@
   <include name="BigFan">
     <control type="group">
       <visible>Control.IsVisible(516)</visible>
+      <include>Animation_OpenCloseZoom</include>
       <control type="list" id="516">
         <viewtype label="$LOCALIZE[31291]">list</viewtype>
         <posx>0</posx>
@@ -10,8 +11,7 @@
         <height>720</height>
         <onleft>516</onleft>
         <onright>516</onright>
-        <onup condition="!IsEmpty(ListItem.Trailer)">7001</onup>
-        <onup condition="IsEmpty(ListItem.Trailer)">9000</onup>
+        <onup>SetFocus(7000)</onup>
         <ondown>71</ondown>
         <viewtype label="BigFan">bigwrap</viewtype>
         <pagecontrol>71</pagecontrol>
@@ -59,7 +59,6 @@
           <posy>0</posy>
           <width>1280</width>
           <height>720</height>
-          <visible>Player.HasVideo</visible>
         </control>
       </control>
 
@@ -77,8 +76,8 @@
           <effect type="slide" time="400" start="0,90" end="0,0" easing="out" tween="cubic" />
         </animation>
         <animation type="WindowClose">
-          <effect type="fade" time="300" start="100" end="0" />
-          <effect type="slide" time="300" start="0,0" end="0,90" easing="in" tween="cubic" />
+          <effect type="fade" time="400" start="100" end="0" />
+          <effect type="slide" time="400" start="0,0" end="0,90" easing="in" tween="cubic" />
         </animation>
         <include>Animation_HideMultiplex</include>
         <control type="scrollbar" id="71">
@@ -86,7 +85,7 @@
           <posy>116r</posy>
           <width>1280</width>
           <height>125</height>
-          <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(516)|ControlGroup(9000).HasFocus|Control.HasFocus(7001)">Conditional</animation>
+          <visible allowhiddenfocus="true">Control.HasFocus(71)</visible>
           <texturesliderbackground>osd/osd_progress_clear.png</texturesliderbackground>
           <texturesliderbar>osd/osd_progress_clear.png</texturesliderbar>
           <texturesliderbarfocus>osd/osd_progressmid.png</texturesliderbarfocus>
@@ -99,14 +98,14 @@
           <orientation>horizontal</orientation>
         </control>
         <control type="image">
-          <description>osd bar bottom</description>
-          <posx>0</posx>
-          <posy>125r</posy>
-          <width>1280</width>
-          <height>125</height>
-          <texture>osd/osd_back.png</texture>
-        </control>
-        <control type="image">
+        <description>osd bar bottom</description>
+        <posx>0</posx>
+        <posy>125r</posy>
+        <width>1280</width>
+        <height>125</height>
+        <texture>osd/osd_back.png</texture>
+      </control>
+      <control type="image">
           <posx>15</posx>
           <posy>85r</posy>
           <width>34</width>
@@ -186,7 +185,7 @@
             <height>202</height>
             <fadetime>275</fadetime>
             <aspectratio scalediffuse="false">stretch</aspectratio>
-            <texture>thumbs/poster_glass_noreflect.png</texture>
+            <texture background="true">thumbs/poster_glass_noreflect.png</texture>
             <bordertexture border="-11">thumbs/poster_shadow.png</bordertexture>
           </control>
           <control type="image">
@@ -195,7 +194,7 @@
             <width>40</width>
             <height>40</height>
             <fadetime>IconCrossfadeTime2</fadetime>
-            <texture>thumbs/OverlayWatched.png</texture>
+            <texture background="true">thumbs/OverlayWatched.png</texture>
             <visible>StringCompare(ListItem.Overlay,OverlayWatched.png)+Skin.HasSetting(watchedoverlay)+!IsEmpty(ListItem.Overlay)</visible>
           </control>
           <control type="image">
@@ -204,7 +203,7 @@
             <width>40</width>
             <height>40</height>
             <fadetime>IconCrossfadeTime2</fadetime>
-            <texture>thumbs/UnWatched2.png</texture>
+            <texture background="true">thumbs/UnWatched2.png</texture>
             <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png)+Skin.HasSetting(newstatus)+!IsEmpty(ListItem.Overlay)</visible>
             <include>RecentVisibilityPosters</include>
           </control>
@@ -240,7 +239,7 @@
           <align>left</align>
           <scroll>true</scroll>
           <textcolor>cccdcdcd</textcolor>
-          <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.RatingAndVotes, • ]</label>
+          <label>$INFO[ListItem.Year] • $INFO[ListItem.Duration] $LOCALIZE[12391] • $INFO[ListItem.RatingAndVotes]</label>
           <visible>!substring(Container.Listitem.Label,..,left)+!IsEmpty(ListItem.foldername)+Container.Content(movies)</visible>
         </control>
         <control type="label">
@@ -252,10 +251,11 @@
           <align>left</align>
           <scroll>true</scroll>
           <textcolor>cccdcdcd</textcolor>
-          <label>$INFO[ListItem.Label2] [LOWERCASE]$INFO[ListItem.Property(UnWatchedEpisodes),($LOCALIZE[16101]: ,)][/LOWERCASE]</label>
+          <label>$INFO[ListItem.Label2] [LOWERCASE]($LOCALIZE[16101]: $INFO[ListItem.Property(UnWatchedEpisodes)])[/LOWERCASE]</label>
           <visible>!substring(Container.Listitem.Label,..,left)+!IsEmpty(ListItem.foldername)+Container.Content(tvshows)</visible>
         </control>
       </control>
+
     </control>
   </include>
 </includes>
